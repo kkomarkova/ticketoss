@@ -2,7 +2,7 @@ import{FaPizzaSlice, FaHamburger } from "react-icons/fa";
 import{GiNoodles, GiChopsticks} from "react-icons/gi";
 import React from 'react'
 import {List, SLink} from "../styles/Style";
-import {NavLink} from "react-router-dom";
+
 
 function Category() {
   return (
@@ -19,7 +19,7 @@ function Category() {
     <GiNoodles/>
     <h4>Thai</h4>
 </SLink>
-<SLink to={'/cuisine/Japanese'}
+<SLink to={'/cuisine/Spanish'}
 >
     <GiChopsticks/>
     <h4>Japanese</h4>
