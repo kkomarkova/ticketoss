@@ -7,6 +7,7 @@ import Landingpage from "./pages/Landingpage";
 // import { home0bjOne } from "./components/InfoSection/Data";
 import Footer from "./components/Footer/Footer";
 import Signinpage from "./pages/Signinpage";
+import Recipe from "./pages/Recipe";
 
 //BrowserRouter is inteligent component that look at the path and renders the component needed
 
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/*" element={<Landingpage />} exact />
           <Route path="/signin" element={<Signinpage />} exact />
+          <Route path="/recipe/" element={<Recipe />} />
         </Routes>
         {/* <Landingpage />
         <InfoSection {...home0bjOne} /> */}

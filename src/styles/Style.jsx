@@ -12,7 +12,8 @@ export const Wrapper = styled.div`
 `;
 export const Card = styled.div`
   min-height: 15rem;
-  border-radius: 2rem;
+  min-width: 3rem;
+  border-radius: 1rem;
   overflow: hidden;
   position: relative;
 
@@ -477,6 +478,7 @@ export const MainButton = styled(LinkS)`
     background: ${({ primary }) => (primary ? "#fff" : "#01BF71")};
   }
 `;
+
 //InfoSection
 export const InfoContainer = styled.div`
   color: #fff;
@@ -489,13 +491,60 @@ export const InfoContainer = styled.div`
 export const InfoWrapper = styled.div`
   display: grid;
   z-index: 1;
-  height: 860px;
+  height: 700px;
   width: 100%;
   max-width: 1100px;
   margin-right: auto;
   margin-left: auto;
   padding: 0 24px;
   justify-content: center;
+`;
+
+//Popular page
+export const PopularLink = styled(LinkR)``;
+export const PopularTextWrapper = styled.div`
+  max-width: 500px;
+  padding-top: 0;
+`;
+export const TopLinePopular = styled.p`
+  color: #01bf71;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+`;
+export const PopularHeading = styled.h1`
+  margin-bottom: 24px;
+  font-size: 36px;
+  line-height: 1.1;
+  font-weight: 600;
+  color: ${({ lightText }) => (lightText ? "#f7f8fa" : "#010606")};
+
+  @media screen and (max-width: 480px) {
+    font-size: 32px;
+  }
+`;
+export const PopularWrapper = styled.div`
+  display: grid;
+  z-index: 1;
+  height: 600px;
+  width: 100%;
+  max-width: 1100px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0px;
+  justify-content: center;
+  padding-top: 100px;
+`;
+
+export const PopularContainer = styled.div`
+  color: #e1f5f1;
+  background: ${({ lightBg }) => (lightBg ? "#e1f5f1" : "#69968d")};
+  @media screen and (max-width: 768px) {
+    padding: 100px 0;
+  }
 `;
 
 export const InfoRow = styled.div`

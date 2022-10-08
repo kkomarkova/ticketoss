@@ -9,6 +9,7 @@ import Category from "../components/Category";
 import Pages from "../pages/Pages";
 import Footer from "../components/Footer/Footer";
 import SignIn from "../components/SignIn/Signin";
+import Popular from "../components/Popular";
 
 const Landingpage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,8 +23,9 @@ const Landingpage = () => {
       <Navbar toggle={toggle} />
       <MainSection />
       <InfoSection {...home0bjOne} />
-      <Search />
-      <Category />
+      <Popular />
+      {/* <Search /> */}
+      {/* <Category /> */}
       <Pages />
     </>
   );
