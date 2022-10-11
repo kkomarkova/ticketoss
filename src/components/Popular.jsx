@@ -11,6 +11,7 @@ import {
   Subtitle,
   PopularLink,
 } from "../styles/Style";
+
 import { useEffect, useState } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
