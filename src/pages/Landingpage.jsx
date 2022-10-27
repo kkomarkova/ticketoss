@@ -1,5 +1,3 @@
-import Sidebar from "../components/Sidebar/Sidebar";
-import Navbar from "../components/Navbar/Navbar";
 import { useState } from "react";
 import MainSection from "../components/MainSection/MainSection";
 import InfoSection from "../components/InfoSection/InfoSection";
@@ -12,15 +10,11 @@ import SignIn from "../components/SignIn/Signin";
 import Popular from "../components/Popular";
 
 const Landingpage = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => {
-    setIsOpen(!isOpen);
-  };
+  
 
   return (
     <>
-      <Sidebar isOpen={isOpen} toggle={toggle} />
-      <Navbar toggle={toggle} />
+      
       <MainSection />
       <InfoSection {...home0bjOne} />
       <Popular />

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { IconContext } from "react-icons/lib";
-import { NavLink } from "react-router-dom";
 import {
   Nav,
   NavBtn,
@@ -64,11 +63,16 @@ const Navbar = ({ toggle }) => {
                 <NavLinks to="recipes">Recipes</NavLinks>
               </NavItem>
               <NavItem>
-                <NavLinks to="signup">Sign Up</NavLinks>
+                <NavLinks 
+                  to="/register" 
+                  exact="true"
+                  >
+                    Sign Up
+                  </NavLinks>
               </NavItem>
             </NavMenu>
             <NavBtn>
-              <NavBtnLink to="/signin"> Sign In </NavBtnLink>
+              <NavBtnLink to="/signin">Login </NavBtnLink>
             </NavBtn>
           </NavbarContainer>
         </Nav>
