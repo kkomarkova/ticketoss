@@ -1,35 +1,22 @@
-import Pages from "./pages/Pages";
-import Category from "./components/Category";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Search from "./components/Search";
-import Landingpage from "./pages/Landingpage";
-// import InfoSection from "./components/InfoSection/InfoSection";
-// import { home0bjOne } from "./components/InfoSection/Data";
-import Footer from "./components/Footer/Footer";
-import Signinpage from "./pages/Signinpage";
-import Recipe from "./pages/Recipe";
-import Profile from "./components/Profile/Profile";
-
-//BrowserRouter is inteligent component that look at the path and renders the component needed
+import React, {useState} from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import AppRouter from "./routes";
+import Sidebar from "./components/Sidebar/Sidebar";
+import Navbar from "./components/Navbar";
+//import Footer from "./components/Footer/Footer";
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/*" element={<Landingpage />} exact />
-          <Route path="/signin" element={<Signinpage />} exact />
-          <Route path="/recipe" element={<Recipe />} exact />
-          <Route path="/profile" element={<Profile />} />
-        </Routes>
-        {/* <Landingpage />
-        <InfoSection {...home0bjOne} /> */}
-        {/* <Search />
-        <Category />
-        <Pages /> */}
-        {/* <Footer /> */}
-      </BrowserRouter>
-    </div>
+    <>
+      <AppRouter />
+      {/* <Sidebar isOpen={isOpen} toggle={toggle} />
+      <Navbar toggle={toggle} /> */}
+      {/* <Footer /> */}
+    </>
   );
 }
 
