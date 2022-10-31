@@ -1,9 +1,21 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Navigate } from 'react-router-dom';
 import { useSelector } from "react-redux";
+import { logout } from "../../store/actions/auth";
 
-const Profile = () => {
+const Profile = (props) => {
   
+  const dispatch = useDispatch();
+
+  const handleLogOut = () => {
+    dispatch(logout())
+      .then(() => {
+        props.history.push("/");
+        window.location.reload();
+    });
+  };
+
   const { user: currentUser } = useSelector((state) => state.auth);
 
   if (!currentUser) {
@@ -27,6 +39,7 @@ const Profile = () => {
           <p>
             <strong>Email:</strong> {currentUser.loginUser.email}
           </p>
+          <button onClick={handleLogOut}>Logout</button>
         </div>
       ) : (
         <Navigate to="/login" />

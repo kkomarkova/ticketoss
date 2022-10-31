@@ -31,11 +31,11 @@ const login = async (Email, Password) => {
 }
 
 const logout = () => {
-        localStorage.removeItem("user");
+        localStorage.removeItem("AccessToken");
     }
  
 const getCurrentUser = () => {
-    return JSON.parse(localStorage.getItem('user'));;
+    return JSON.parse(localStorage.getItem('AccessToken'));;
 }
     
 export default {
