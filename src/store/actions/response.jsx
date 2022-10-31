@@ -1,4 +1,4 @@
-import {SET_RESPONSE, CLEAR_RESPONSE} from './types';
+import { SET_RESPONSE, CLEAR_RESPONSE } from './types';
 
 export const setResponse = (response) => (dispatch) => {
     dispatch({

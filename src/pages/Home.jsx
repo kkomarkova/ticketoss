@@ -1,39 +1,15 @@
-import React, { useState, useEffect } from "react";
-import UserService from "../store/services/user.service";
+import React from "react";
+//import Home from "../components/Home";
 
-const Home = () => {
 
-  const [content, setContent] = useState([]);
+const HomePage = () => {
 
-  useEffect(() => {
-    UserService.getPublicContent().then(
-      (response) => {
-        setContent(response.data);
-      },
-      (error) => {
-        const _content =
-          (error.response &&
-            error.response.data &&
-            error.response.data.message) ||
-          error.message ||
-          error.toString();
 
-          setContent(_content);
-          console.log(_content);
-      }
-    );
-  }, []);
-
-console.log("Content: "+content.response);
   return (
     <>
-      <div className="container">
-        <header className="jumbotron">
-          <h3>{content}</h3>
-        </header>
-      </div>
+      <h1>Home</h1>
     </>
   );
 }
 
-export default Home;
+export default HomePage;

@@ -1,7 +1,7 @@
 import React from "react";
 import Register from '../components/Register';
 
-const Signinpage = () => {
+const RegisterPage = () => {
   return (
     <>
       <Register />
@@ -9,4 +9,4 @@ const Signinpage = () => {
   );
 };
 
-export default Signinpage;
+export default RegisterPage;

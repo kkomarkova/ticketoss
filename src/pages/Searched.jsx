@@ -23,9 +23,9 @@ function Searched() {
 return (
     <CuisineCard key={item.id}>
         <Link to={"/recipe/" + item.id}>
-<img src={item.image} alt=""/>
-<h4> {item.title}</h4>
-</Link>
+            <img src={item.image} alt=""/>
+            <h4> {item.title}</h4>
+        </Link>
     </CuisineCard>
     
 )

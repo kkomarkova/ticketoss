@@ -1,12 +1,24 @@
 import React, { useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
+import { useNavigate } from "react-router-dom";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 import { isEmail } from "validator";
 
 import { register } from "../../store/actions/auth";
+
+import {
+    FormContent,
+    FormInput,
+    FormWrap,
+    SignInContainer,
+    FormLabel,
+    FormButton,
+    Text,
+    SignInForm,
+  } from "../../styles/Style";
+
 
 const requiredField = (value) => {
   if (!value) {
@@ -69,8 +81,10 @@ const Register = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [successful, setSuccessful] = useState(false);
 
-  const { message } = useSelector(state => state.response);
+  const { response } = useSelector(state => state.response);
   const dispatch = useDispatch();
+
+  const navigate = useNavigate();
 
   const onChangeFirstName = (e) => {
     const FirstName = e.target.value;
@@ -114,6 +128,8 @@ const Register = () => {
         ))
         .then(() => {
           setSuccessful(true);
+          alert("Successfully "+{setFirstName}+" Registered");
+          navigate(`/`);
         })
         .catch(() => {
           setSuccessful(false);
@@ -194,15 +210,15 @@ const Register = () => {
               </div>
 
               <div className="form-group">
-                <button className="btn btn-primary btn-block">Sign Up</button>
+                <button className="btn btn-primary btn-block">Register</button>
               </div>
             </div>
           )}
 
-          {message && (
+          {response && (
             <div className="form-group">
               <div className={ successful ? "alert alert-success" : "alert alert-danger" } role="alert">
-                {message}
+                {response}
               </div>
             </div>
           )}

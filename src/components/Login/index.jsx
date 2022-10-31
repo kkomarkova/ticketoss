@@ -6,7 +6,7 @@ import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 
-import { login } from "../../actions/auth";
+import { login } from "../../store/actions/auth";
 
 const required = (value) => {
     if (!value) {
@@ -29,7 +29,7 @@ const Login = (props) => {
     const [loading, setLoading] = useState(false);
 
     const { isLoggedIn } = useSelector(state => state.auth);
-    const { message } = useSelector(state => state.message);
+    const { response } = useSelector(state => state.response);
 
      const dispatch = useDispatch();
 
@@ -108,10 +108,10 @@ const handleLogin = (e) => {
                         </button>
                     </div>
 
-                    {message && (
+                    {response && (
                         <div className="form-group">
                             <div className="alert alert-danger" role="alert">
-                                {message}
+                                {response}
                             </div>
                         </div>
                     )}
