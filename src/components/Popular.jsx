@@ -40,7 +40,6 @@ function Popular() {
       //Set the local storage here
       localStorage.setItem("popular", JSON.stringify(data.recipes));
       setPopular(data.recipes);
-      console.log(data.recipes);
     }
   };
   //Mapping through the recipes and outputing something

@@ -1,16 +1,18 @@
 const home = '/';
 const landingPage = '/*';
-const signIn = '/signin';
+const login = '/login';
 const recipe = '/recipe';
 const profile = '/profile';
 const register = '/register';
 
 
-export default { 
+const routeConstants = {  
     home, 
     landingPage, 
-    signIn, 
+    login, 
     recipe, 
     profile, 
     register 
 };
+
+export default routeConstants;

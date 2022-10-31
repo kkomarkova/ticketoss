@@ -13,7 +13,7 @@ const AppRouter = () => {
     return (
           <Routes>
             <Route path={routeConstants.landingPage} element={<Landingpage />} exact />
-            <Route path={routeConstants.signinpage} element={<Signinpage />} exact />
+            <Route path={routeConstants.login} element={<Signinpage />} exact />
             <Route path={routeConstants.recipe} element={<Recipe />} exact />
             <Route path={routeConstants.profile} element={<Profile />} />
             <Route path={routeConstants.register} element={<RegisterPage />} />

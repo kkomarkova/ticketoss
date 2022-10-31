@@ -1,18 +1,38 @@
-import Veggie from "../components/Veggie";
-import Popular from "../components/Popular";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import UserService from "../store/services/user.service";
 
-function Home() {
+const Home = () => {
+
+  const [content, setContent] = useState([]);
+
+  useEffect(() => {
+    UserService.getPublicContent().then(
+      (response) => {
+        setContent(response.data);
+      },
+      (error) => {
+        const _content =
+          (error.response &&
+            error.response.data &&
+            error.response.data.message) ||
+          error.message ||
+          error.toString();
+
+          setContent(_content);
+          console.log(_content);
+      }
+    );
+  }, []);
+
+console.log("Content: "+content.response);
   return (
-    <motion.div
-      animate={{ opacity: 1 }}
-      initial={{ opacity: 0 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      <Popular />
-      <Veggie />
-    </motion.div>
+    <>
+      <div className="container">
+        <header className="jumbotron">
+          <h3>{content}</h3>
+        </header>
+      </div>
+    </>
   );
 }
 
