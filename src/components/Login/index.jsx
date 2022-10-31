@@ -1,11 +1,15 @@
 import React, { useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux"
-import { Navigate, useNavigate } from "react-router-dom"; 
+import { Navigate } from "react-router-dom"; 
 
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
-
+import { 
+    FormContainer,
+    FormPB 
+} from "../../styles/Style";
+import ProfileImg from "../../images/pb.jpg";
 import { login } from "../../store/actions/auth";
 
 const required = (value) => {
@@ -20,7 +24,6 @@ const required = (value) => {
 
 const Login = (props) => {
 
-    var navigate = useNavigate();
     const form = useRef();
     const checkBtn = useRef();
 
@@ -67,12 +70,11 @@ const handleLogin = (e) => {
     }
 
     return (
-        <div className="col-md-12">
-            <div className="card card-container">
-                <img
-                    src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+        <>
+            <FormContainer className="card card-container">
+                <FormPB
+                    src={ProfileImg}
                     alt="profile-img"
-                    className="profile-img-card"
                 />
                 <Form onSubmit={handleLogin} ref={form}>
                     <div className="form-group">
@@ -117,8 +119,8 @@ const handleLogin = (e) => {
                     )}
                     <CheckButton style={{ display: "none" }} ref={checkBtn} />
                 </Form>
-            </div>
-        </div>
+            </FormContainer>
+        </>
     );
 };
 

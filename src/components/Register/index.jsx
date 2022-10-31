@@ -8,17 +8,11 @@ import { isEmail } from "validator";
 
 import { register } from "../../store/actions/auth";
 
-import {
-    FormContent,
-    FormInput,
-    FormWrap,
-    SignInContainer,
-    FormLabel,
-    FormButton,
-    Text,
-    SignInForm,
-  } from "../../styles/Style";
-
+import { 
+  FormContainer, 
+  FormPB 
+} from "../../styles/Style";
+import ProfileImg from "../../images/pb.jpg";
 
 const requiredField = (value) => {
   if (!value) {
@@ -138,12 +132,11 @@ const Register = () => {
   };
 
   return (
-    <div className="col-md-12">
-      <div className="card card-container">
-        <img
-          src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+    <>
+      <FormContainer>
+        <FormPB
+          src={ProfileImg}
           alt="profile-img"
-          className="profile-img-card"
         />
 
         <Form onSubmit={handleRegister} ref={form}>
@@ -224,8 +217,8 @@ const Register = () => {
           )}
           <CheckButton style={{ display: "none" }} ref={checkBtn} />
         </Form>
-      </div>
-    </div>
+      </FormContainer>
+    </>
   );
 };
 
