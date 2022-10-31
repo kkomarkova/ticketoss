@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AppRouter from "./routes";
 import Sidebar from "./components/Sidebar/Sidebar";
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/Navbar";
 //import Footer from "./components/Footer/Footer";
 
 function App() {
@@ -13,8 +13,8 @@ function App() {
   return (
     <>
       <AppRouter />
-      <Sidebar isOpen={isOpen} toggle={toggle} />
-      <Navbar toggle={toggle} />
+      {/* <Sidebar isOpen={isOpen} toggle={toggle} />
+      <Navbar toggle={toggle} /> */}
       {/* <Footer /> */}
     </>
   );

@@ -1,19 +1,15 @@
-import Veggie from "../components/Veggie";
-import Popular from "../components/Popular";
-import { motion } from "framer-motion";
+import React from "react";
+//import Home from "../components/Home";
 
-function Home() {
+
+const HomePage = () => {
+
+
   return (
-    <motion.div
-      animate={{ opacity: 1 }}
-      initial={{ opacity: 0 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      <Popular />
-      <Veggie />
-    </motion.div>
+    <>
+      <h1>Home</h1>
+    </>
   );
 }
 
-export default Home;
+export default HomePage;
