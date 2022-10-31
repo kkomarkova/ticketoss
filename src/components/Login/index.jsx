@@ -34,7 +34,7 @@ const Login = (props) => {
     const { isLoggedIn } = useSelector(state => state.auth);
     const { response } = useSelector(state => state.response);
 
-     const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     const onChangeEmail = (e) => {
         const email = e.target.value;
@@ -46,24 +46,24 @@ const Login = (props) => {
     };
     
 const handleLogin = (e) => {
-    e.preventDefault();
+        e.preventDefault();
 
-    setLoading(true);
+        setLoading(true);
 
-    form.current.validateAll();
+        form.current.validateAll();
 
-    if (checkBtn.current.context._errors.length === 0) {
-        dispatch(login(email, password))
-        .then(() => {
-            props.history.push("/profile");
-            window.location.reload();
-        })
-        .catch(() => {
+        if (checkBtn.current.context._errors.length === 0) {
+            dispatch(login(email, password))
+            .then(() => {
+                props.history.push("/profile");
+                window.location.reload();
+            })
+            .catch(() => {
+                setLoading(false);
+            });
+        } else {
             setLoading(false);
-        });
-    } else {
-        setLoading(false);
-    }
+        }
     }
     if (isLoggedIn) {
         return <Navigate to="/profile" />;
