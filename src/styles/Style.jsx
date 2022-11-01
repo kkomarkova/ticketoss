@@ -165,13 +165,14 @@ export const Info = styled.div`
 export const Nav = styled.nav`
   background: ${({ scrollNav }) => (scrollNav ? "#000" : "transparent")};
   height: 80px;
-  margin-top: -80px;
   display: flex;
   justify-content: center;
   font-size: 1rem;
-  position: sticky;
-  top: 0;
   z-index: 10;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
 
   @media screen and (max-width: 960px) {
     transition: 0.8s all ease;
