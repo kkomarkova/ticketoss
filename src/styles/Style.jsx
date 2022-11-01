@@ -821,3 +821,14 @@ export const Text = styled.span`
   color: #fff;
   font-size: 14px;
 `;
+/* Login and Register form */ 
+export const FormContainer = styled.div`
+width: 410px;
+margin: 15% auto;
+border: 5px solid #000000;
+`;
+
+export const FormPB = styled.img`
+width: 400px;
+height: auto;
+`;

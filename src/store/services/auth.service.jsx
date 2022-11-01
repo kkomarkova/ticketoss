@@ -24,18 +24,23 @@ const login = async (Email, Password) => {
             Email,
             Password,
         });
-    if (response.data.accessToken) {
-        localStorage.setItem("user", JSON.stringify(response.data));
+    if (response.data.token) {
+        localStorage.setItem("AccessToken", JSON.stringify(response.data.token));
     }
     return response.data;
-    }
+}
 
 const logout = () => {
-        localStorage.removeItem("user");
+        localStorage.removeItem("AccessToken");
     }
+ 
+const getCurrentUser = () => {
+    return JSON.parse(localStorage.getItem('AccessToken'));;
+}
     
-    export default {
+export default {
         register,
         login,
         logout,
+        getCurrentUser
     };

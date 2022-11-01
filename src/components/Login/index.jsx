@@ -1,11 +1,15 @@
 import React, { useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux"
-import { Navigate, useNavigate } from "react-router-dom"; 
+import { Navigate } from "react-router-dom"; 
 
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
-
+import { 
+    FormContainer,
+    FormPB 
+} from "../../styles/Style";
+import ProfileImg from "../../images/pb.jpg";
 import { login } from "../../store/actions/auth";
 
 const required = (value) => {
@@ -20,7 +24,6 @@ const required = (value) => {
 
 const Login = (props) => {
 
-    var navigate = useNavigate();
     const form = useRef();
     const checkBtn = useRef();
 
@@ -31,7 +34,7 @@ const Login = (props) => {
     const { isLoggedIn } = useSelector(state => state.auth);
     const { response } = useSelector(state => state.response);
 
-     const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     const onChangeEmail = (e) => {
         const email = e.target.value;
@@ -43,36 +46,35 @@ const Login = (props) => {
     };
     
 const handleLogin = (e) => {
-    e.preventDefault();
+        e.preventDefault();
 
-    setLoading(true);
+        setLoading(true);
 
-    form.current.validateAll();
+        form.current.validateAll();
 
-    if (checkBtn.current.context._errors.length === 0) {
-        dispatch(login(email, password))
-        .then(() => {
-            props.history.push("/profile");
-            window.location.reload();
-        })
-        .catch(() => {
+        if (checkBtn.current.context._errors.length === 0) {
+            dispatch(login(email, password))
+            .then(() => {
+                props.history.push("/profile");
+                window.location.reload();
+            })
+            .catch(() => {
+                setLoading(false);
+            });
+        } else {
             setLoading(false);
-        });
-    } else {
-        setLoading(false);
-    }
+        }
     }
     if (isLoggedIn) {
         return <Navigate to="/profile" />;
     }
 
     return (
-        <div className="col-md-12">
-            <div className="card card-container">
-                <img
-                    src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+        <>
+            <FormContainer className="card card-container">
+                <FormPB
+                    src={ProfileImg}
                     alt="profile-img"
-                    className="profile-img-card"
                 />
                 <Form onSubmit={handleLogin} ref={form}>
                     <div className="form-group">
@@ -117,8 +119,8 @@ const handleLogin = (e) => {
                     )}
                     <CheckButton style={{ display: "none" }} ref={checkBtn} />
                 </Form>
-            </div>
-        </div>
+            </FormContainer>
+        </>
     );
 };
 
