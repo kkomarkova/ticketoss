@@ -12,14 +12,10 @@ import {
   NavItem,
   NavMenu,
 } from "../../styles/Style";
-import { FaBars } from "react-icons/fa";
-import { animateScroll as scroll } from "react-scroll";
 import { logout } from "../../store/actions/auth";
 import { clearResponse } from "../../store/actions/response";
 
-const Navbar = ({ toggle }) => {
-  const [scrollNav, setScrollNav] = useState(false);
-  const [showModeratorBoard, setShowModeratorBoard] = useState(false);
+const Navbar = () => {
   const [showAdminBoard, setShowAdminBoard] = useState(false);
 
   const { user: currentUser } = useSelector((state) => state.auth);
@@ -47,17 +43,11 @@ const Navbar = ({ toggle }) => {
 
   return (
     <>
-      <nav className="navbar navbar-expand navbar-dark bg-dark">
+      <Nav className="navbar navbar-expand navbar-dark bg-dark">
         <Link to={"/"} className="navbar-brand">
           Ticket Resale
         </Link>
         <div className="navbar-nav mr-auto">
-          <li className="nav-item">
-            <Link to={"/"} className="nav-link">
-              Home
-            </Link>
-          </li>
-
           {showAdminBoard && (
             <li className="nav-item">
               <Link to={"/admin"} className="nav-link">
@@ -95,7 +85,7 @@ const Navbar = ({ toggle }) => {
             </li>
           </div>
         )}
-      </nav>
+      </Nav>
     </>
   );
 };
