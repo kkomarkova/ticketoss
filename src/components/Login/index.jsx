@@ -73,7 +73,7 @@ const handleLogin = (e) => {
         <>
             <FormContainer className="card card-container">
                 <FormPB
-                    src={ProfileImg}
+                    className="profileIMG" src={ProfileImg}
                     alt="profile-img"
                 />
                 <Form onSubmit={handleLogin} ref={form}>
@@ -102,11 +102,12 @@ const handleLogin = (e) => {
                     </div>
 
                     <div className="form-group">
-                        <button className="btn btn-primary btn-block" disabled={loading}>
+                        <button style={{ margin: "3% auto 0",display: "block"}} className="btn btn-primary btn-block test" disabled={loading}>
                             {loading && (
                                 <span className="spinner-border spinner-border-sm"></span>
                             )}
                             <span>Login</span>
+                            
                         </button>
                     </div>
 

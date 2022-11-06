@@ -824,12 +824,21 @@ export const Text = styled.span`
 `;
 /* Login and Register form */ 
 export const FormContainer = styled.div`
-width: 410px;
-margin: 15% auto;
-border: 5px solid #000000;
+width: 40%;
+margin: 10% auto;
+margin-buttom: 0;
+background: #D9D9D9;
+padding 2%;
+border: none;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 800;
+font-size: 16px;
+line-height: 26px;
 `;
 
 export const FormPB = styled.img`
-width: 400px;
+width: 30%;
 height: auto;
+margin: auto;
 `;
