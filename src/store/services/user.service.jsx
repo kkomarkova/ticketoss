@@ -8,7 +8,7 @@ const getAllUser = () => {
 };
 
 const getUser = () => {
-  return axios.get(API_URL + '/{id}', { headers: authHeader() });
+  return axios.get(API_URL + '{id}', { headers: authHeader() });
 };
 
 

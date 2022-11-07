@@ -18,7 +18,10 @@ const register = (
     });
 };
 
-const login = async (Email, Password) => {
+const login = async (
+    Email, 
+    Password
+    ) => {
         const response = await axios
         .post(API_URL + "authenticate", {
             Email,
