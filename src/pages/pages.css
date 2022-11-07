@@ -1,0 +1,48 @@
+/*home-page css*/
+
+.home-body h1{
+
+    padding-top: 10%;
+    text-align: center;
+    color: white;
+}
+.home-ticket{
+    margin-top: -5%;
+    margin-bottom: -5%;
+    cursor: pointer;
+}
+.home-background-img{
+    position: absolute;
+    max-width: 100%;
+    z-index: -1;
+}
+.home-ticket .ticket-info-container{
+    display: none;
+}
+.home-body .ticket-container{
+    margin: 10% auto;
+    display: block;
+}
+
+
+/*Ticket-page css*/
+
+.single-ticket-page h1{
+    padding-top: 8%;
+   /* margin-bottom: -7%;*/
+    margin-left: 3%;
+}
+.single-ticket-page .ticket-img-container{
+    width: 80%;
+    margin: 7% auto;
+}
+.single-ticket-page .ticket-info-container{
+    margin-left: 3%;
+    width: 80%;
+    margin: 8% auto !important;
+}
+
+.single-ticket-page{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
