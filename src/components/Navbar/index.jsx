@@ -15,7 +15,7 @@ import {
 import { logout } from "../../store/actions/auth";
 import { clearResponse } from "../../store/actions/response";
 
-const Navbar = () => {
+const Navbar = (props) => {
   
 
   const { user: currentUser } = useSelector((state) => state.auth);
