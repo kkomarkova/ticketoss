@@ -11,7 +11,7 @@ const Seller = (props) => {
           <div class="seller-profile">
             <div>
             <img src={""} title="#"/></div>
-            <p>Seller Name</p>
+            <h2>Seller Name</h2>
           </div>
 
           <div class="star-rating">
