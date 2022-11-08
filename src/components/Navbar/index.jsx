@@ -30,7 +30,11 @@ const Navbar = () => {
   }, [dispatch, location]);
 
   const logOut = useCallback(() => {
-    dispatch(logout());
+    dispatch(logout())
+      .then(() => {
+        props.history.push("/");
+        window.location.reload();
+    });
   }, [dispatch]);
 
 
