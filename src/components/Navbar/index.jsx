@@ -16,7 +16,7 @@ import { logout } from "../../store/actions/auth";
 import { clearResponse } from "../../store/actions/response";
 
 const Navbar = () => {
-  const [showAdminBoard, setShowAdminBoard] = useState(false);
+  
 
   const { user: currentUser } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
@@ -33,13 +33,6 @@ const Navbar = () => {
     dispatch(logout());
   }, [dispatch]);
 
-  useEffect(() => {
-    if (currentUser) {
-      setShowAdminBoard(currentUser.roles.includes("admin"));
-    } else {
-      setShowAdminBoard(false);
-    }
-  }, [currentUser]);
 
   return (
     <>
@@ -47,21 +40,11 @@ const Navbar = () => {
         <Link to={"/"} className="navbar-brand">
           Ticket Resale
         </Link>
-        <div className="navbar-nav mr-auto">
-          {showAdminBoard && (
-            <li className="nav-item">
-              <Link to={"/admin"} className="nav-link">
-                Admin Board
-              </Link>
-            </li>
-          )}
-        </div>
-
         {currentUser ? (
           <div className="navbar-nav ml-auto">
             <li className="nav-item">
               <Link to={"/profile"} className="nav-link">
-                {currentUser.email}
+                 {currentUser.email}
               </Link>
             </li>
             <li className="nav-item">
