@@ -3,7 +3,7 @@ import authHeader from "./auth-header";
 
 const API_URL = "https://localhost:7067/api/User/";
 
-const getAllUser = () => {
+const getAllUsers = () => {
   return axios.get(API_URL + "GetAllUsers", { headers: authHeader() });
 };
 
@@ -13,6 +13,6 @@ const getUser = () => {
 
 
 export default {
-  getAllUser,
+  getAllUsers,
   getUser,
 };

@@ -4,6 +4,7 @@ import "./index.css";
 import ReactDOM from 'react-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
+
 const UserProfile = (props) => {
   
   return (
@@ -13,7 +14,7 @@ const UserProfile = (props) => {
       <div class="seller-profile">
             <div>
             <img src={""} title="#"/></div>
-            <h2 >Seller Name</h2>
+            <h2 >{props.Email}</h2>
           </div>
       
       <Tabs>
@@ -37,7 +38,16 @@ const UserProfile = (props) => {
 
         <TabPanel>
           <div className="panel-content">
-            <h2>Any content 1</h2>
+            <p>Name</p>
+            <p>{props.Name}</p>
+            <p>Email</p>
+            <p>{props.Email}</p>
+            <p>Phone</p>
+            <p>{props.Phone}</p>
+            <p>Token</p>
+            <p>{props.Token.substring(0,20)}...{" "}
+                {props.Token.substr(props.Token.length - 20)}
+                </p>
           </div>
         </TabPanel>
         <TabPanel>
