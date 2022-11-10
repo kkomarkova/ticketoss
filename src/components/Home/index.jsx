@@ -1,37 +1,46 @@
 import React, { useState, useEffect } from "react";
-import UserService from "../store/services/user.service";
+import TicketService from "../../store/services/ticket.service";
+import Ticket from "../Ticket";
 
 const Home = () => {
 
-  const [content, setContent] = useState([]);
-
+  const [tickets, setTickets] = useState([]);
+  
   useEffect(() => {
-    UserService.getPublicContent().then(
-      (response) => {
-        setContent(response.data);
-      },
-      (error) => {
-        const _content =
-          (error.response &&
-            error.response.data &&
-            error.response.data.message) ||
-          error.message ||
-          error.toString();
+      TicketService.getAllTickets().then(
+        (response) => {
+          setTickets(response.data);
+        },
+        (error) => {
+          const _content =
+            (error.response &&
+              error.response.data) ||
+            error.message ||
+            error.toString();
 
-          setContent(_content);
-          console.log("something"+_content);
-      }
-    );
-  }, []);
-
-console.log("Content: " + content.response);
+            setTickets(_content);
+        }
+      );
+    }, []);
+  
   return (
     <>
-      <div className="container">
-        <header className="jumbotron">
-          <h3>{content}</h3>
-        </header>
-      </div>
+       <div style={{textAlign:"center", margin:"10% 20%"}}>
+        {tickets.map((ticket) => (
+          <Ticket
+            key={ticket.id}
+            name={ticket.name}
+            location={ticket.location}
+            price={ticket.price}
+            eventDate={ticket.eventDate}
+            creationDate={ticket.creationDate}
+            description={ticket.description}
+            expirationDate={ticket.expirationDate}
+          />
+        ))}
+       </div>
+       
+      
     </>
   );
 }

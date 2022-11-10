@@ -1,11 +1,9 @@
 import React from "react";
 import EventImg from "../../images/eventImg.jpg";
 import "./index.css";
-import { useSelector } from "react-redux";
 
 const Ticket = (props) => {
   
-  const {ticket: ticket} = useSelector((state) => state.ticket);
   return (
     <>
        <div className="ticket-container">

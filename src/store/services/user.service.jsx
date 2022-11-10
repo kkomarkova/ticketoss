@@ -1,13 +1,11 @@
 import api from "./api";
 
-//const API_URL = "https://localhost:7067/api/User/";
-
 const getAllUsers = () => {
-  return api.get("user/GetAllUsers");
+  return api.get('/User/GetAllUsers');
 };
 
 const getUser = () => {
-  return api.get('user/{id}');
+  return api.get('/User/{id}');
 };
 
 

@@ -1,7 +1,6 @@
 import api from "./api";
 import TokenService from "./token.service";
 
-const API_URL = "https://localhost:7067/api/User/";
 
 const register = (
     FirstName, 

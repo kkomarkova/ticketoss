@@ -10,8 +10,8 @@ const Seller = (props) => {
         
           <div class="seller-profile">
             <div>
-            <img src={""} title="#"/></div>
-            <h2>Seller Name</h2>
+            <img src={""} title="#" alt="pb"/></div>
+            <h2>{props.sellerName}</h2>
           </div>
 
           <div class="star-rating">
