@@ -12,7 +12,15 @@ const TicketPage = () => {
     <><h1>Ticket View</h1>
     <div className="single-ticket-page">
       <div className="single-ticket">
-      <Ticket /> 
+      <Ticket 
+        name="Event Name"
+        location="Event Location"
+        price="Event Price"
+        eventDate="Event Date"
+        creationDate="Event Creation Date"
+        description="Event Description"
+        expirationDate="Event Expiration Date"
+      /> 
       </div>
       <div>
       <Seller />

@@ -18,19 +18,9 @@ const HomePage = () => {
 
   return (
     <>
-    
     <div className="home-body">
-      
-
       <img className="home-background-img" src={bgImg} alt="Background"/>
       <h1 >Browse all tickets</h1>
-
-          <div className="home-ticket" onClick={navigateTicket}>
-          <Ticket /> 
-          </div>
-          <div className="home-ticket" onClick={navigateTicket}>
-          <Ticket /> 
-          </div>
           <Pagination />
     </div>
     </>

@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import axios from 'axios'
 import ReactPaginate from 'react-paginate';
 import "./index.css";
+import Ticket from "../Ticket";
 
 
 export default class App extends Component {
@@ -19,17 +20,25 @@ export default class App extends Component {
   }
   receivedData() {
       axios
-         /* .get(`https://localhost:7067/api/User/GetAllUsers`)*/  //Reads from our local DB 
-          .get(`https://jsonplaceholder.typicode.com/photos`)
+          .get(`https://localhost:7067/api/Ticket/GetAllTickets`)  //Reads from our local DB 
           .then(res => {
 
               const data = res.data;
               const slice = data.slice(this.state.offset, this.state.offset + this.state.perPage) 
-              const postData = slice.map(pd => <React.Fragment> 
-                  <p className='pagination-content'>{pd.id}</p>  
-                  <p className='pagination-content'>{pd.title}</p>
-                  <img src={pd.thumbnailUrl} alt=""/>
-              </React.Fragment>)
+              const postData = slice.map(pd => 
+              <>
+                    <Ticket
+                        key={pd.id}
+                        name={pd.name}
+                        location={pd.location}
+                        price={pd.price}
+                        eventDate={pd.eventDate}
+                        creationDate={pd.creationDate}
+                        description={pd.description}
+                        expirationDate={pd.expirationDate}
+                    />
+              </>
+              )
 
               this.setState({
                   pageCount: Math.ceil(data.length / this.state.perPage),

@@ -1,18 +1,19 @@
-import axios from "axios";
-import authHeader from "./auth-header";
+import api from "./api";
 
-const API_URL = "https://localhost:7067/api/User/";
+//const API_URL = "https://localhost:7067/api/User/";
 
 const getAllUsers = () => {
-  return axios.get(API_URL + "GetAllUsers", { headers: authHeader() });
+  return api.get("user/GetAllUsers");
 };
 
 const getUser = () => {
-  return axios.get(API_URL + '{id}', { headers: authHeader() });
+  return api.get('user/{id}');
 };
 
 
-export default {
+const UserService = {
   getAllUsers,
   getUser,
 };
+
+export default UserService;

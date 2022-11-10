@@ -1,4 +1,5 @@
-import axios from "axios";
+import api from "./api";
+import TokenService from "./token.service";
 
 const API_URL = "https://localhost:7067/api/User/";
 
@@ -9,7 +10,7 @@ const register = (
     Password, 
     PhoneNumber
     ) => {
-    return axios.post(API_URL + "register", {
+    return api.post("user/register", {
         FirstName,
         LastName,
         Email,
@@ -22,28 +23,31 @@ const login = async (
     Email, 
     Password
     ) => {
-        const response = await axios
-        .post(API_URL + "authenticate", {
+        const response = await api
+        .post("user/authenticate", {
             Email,
             Password,
         });
     if (response.data.token) {
-        localStorage.setItem("AccessToken", JSON.stringify(response.data.token));
+        TokenService.setUser(response.data.token);
+        //localStorage.setItem("AccessToken", JSON.stringify(response.data.token));
     }
     return response.data;
 }
 
 const logout = () => {
-        localStorage.removeItem("AccessToken");
+        TokenService.removeUser();
     }
  
 const getCurrentUser = () => {
-    return JSON.parse(localStorage.getItem('AccessToken'));;
+    return JSON.parse(localStorage.getItem('user'));;
 }
     
-export default {
+const AuthService = {
         register,
         login,
         logout,
         getCurrentUser
     };
+
+export default AuthService;  
