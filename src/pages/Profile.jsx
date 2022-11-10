@@ -6,7 +6,6 @@ const ProfilePage = () => {
   return (
     <>
         <Profile />
-        <UserProfile />
     </>
   );
 };
