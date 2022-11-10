@@ -5,6 +5,8 @@ import bgImg from "../images/party.jpg";
 
 import Ticket from "../components/Ticket";
 import "../pages/pages.css";
+import Pagination from "../components/Pagination";
+
 
 
 const HomePage = () => {
@@ -29,6 +31,7 @@ const HomePage = () => {
           <div className="home-ticket" onClick={navigateTicket}>
           <Ticket /> 
           </div>
+          <Pagination />
     </div>
     </>
   );
