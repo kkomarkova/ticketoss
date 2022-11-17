@@ -1,32 +1,59 @@
-import axios from "axios";
-import authHeader from "./auth-header";
+import api from "./api";
 
-const API_URL = "https://localhost:7067/api/Ticket/";
-
-const createTicket = () => {
-        return axios.post(API_URL + "", { headers: authHeader() });
-    };
+/**
+ * 
+ * @returns 
+ * 
+ * "name": "Denmark vs France",
+  "description": "World Cup 2022 in Qatar",
+  "price": "$1000",
+  "eventDate": "2022-11-10T22:32:24.515Z",
+  "location": "Qatar",
+  "category": "Football",
+  "number": "123456788"
+ */
+const createTicket = (
+    Name,
+    Description,
+    Price,
+    EventDate,
+    Location,
+    Category,
+    Number
+    ) => {
+    return api.post("/Ticket", {
+        Name,
+        Description,
+        Price,
+        EventDate,
+        Location,
+        Category,
+        Number
+    });
+};
 
 const getAllTickets = () => {
-        return axios.get(API_URL + "GetAllTickets", { headers: authHeader() });
+        return api.get("/Ticket/GetAllTickets");
     };
 
 const getTicketLocation = () => {
-        return axios.get(API_URL + "tickets/location/{location}", { headers: authHeader() });
+        return api.get("/Ticket/tickets/location/{location}");
     };
 
 const getTicketCategory = () => {
-        return axios.get(API_URL + "tickets/{category}", { headers: authHeader() });
+        return api.get("/Ticket/tickets/{category}");
     };    
 
 const deleteTicket = () => {
-        return axios.get(API_URL + '{id}', { headers: authHeader() });
+        return api.get('/Ticket/{id}');
     };
 
-export default {
+const TicketService = {
     createTicket,
     getAllTickets,
     getTicketLocation,
     getTicketCategory,
     deleteTicket,
 };
+
+export default TicketService;

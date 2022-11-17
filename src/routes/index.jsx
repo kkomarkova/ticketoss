@@ -5,6 +5,7 @@ import ProfilePage from "../pages/Profile";
 import RegisterPage from "../pages/Register";
 import LoginPage from "../pages/Login";
 import TicketPage from "../pages/Ticket";
+import Test from "../components/Home/index";
 
 
 
@@ -18,6 +19,7 @@ const AppRouter = () => {
             <Route path={routeConstants.register} element={<RegisterPage />} />
             <Route path={routeConstants.login} element={<LoginPage />} />
             <Route path={routeConstants.ticket} element={<TicketPage />} />
+            <Route path={routeConstants.test} element={<Test />} />
           </Routes>
     );
   }

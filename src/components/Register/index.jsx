@@ -122,7 +122,7 @@ const Register = () => {
         ))
         .then(() => {
           setSuccessful(true);
-          alert("Successfully "+{setFirstName}+" Registered");
+          alert("Successfully "+{ firstName }+" Registered");
           navigate(`/`);
         })
         .catch(() => {
@@ -211,7 +211,7 @@ const Register = () => {
           {response && (
             <div className="form-group">
               <div className={ successful ? "alert alert-success" : "alert alert-danger" } role="alert">
-                {response}
+                {response.message}
               </div>
             </div>
           )}

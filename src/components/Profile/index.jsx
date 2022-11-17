@@ -2,6 +2,7 @@ import React from "react";
 import { Navigate } from 'react-router-dom';
 import { useSelector } from "react-redux";
 import UserProfile from "../UserProfile";
+import NewTicket from "../NewTicket";
 
 const Profile = () => {
   
@@ -21,6 +22,7 @@ const Profile = () => {
               Email={currentUserLogin.loginUser.email}
               Token={currentUserLogin.token}
             />
+          {/* <NewTicket /> */}
         </> 
       ) : (
         <Navigate to="/login" />
