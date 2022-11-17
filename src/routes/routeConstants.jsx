@@ -3,6 +3,7 @@ const login = '/login';
 const profile = '/profile';
 const register = '/register';
 const ticket = '/ticket';
+const test = '/test';
 
 
 const routeConstants = {  
@@ -10,7 +11,8 @@ const routeConstants = {
     login, 
     profile, 
     register,
-    ticket
+    ticket,
+    test
 };
 
 export default routeConstants;

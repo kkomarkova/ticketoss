@@ -11,7 +11,7 @@ export default class App extends Component {
       this.state = {
           offset: 0,
           data: [],
-          perPage: 10,
+          perPage: 5,
           currentPage: 0
       };
       this.handlePageClick = this
