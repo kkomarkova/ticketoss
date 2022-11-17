@@ -59,7 +59,7 @@ export const createTicket = (
             return Promise.reject();
         }
     );
-}
+};
 
 export const getAllTickets = () => (dispatch) => {
     return TicketService.getAllTickets().then(
@@ -126,3 +126,4 @@ export const getTicketCategory = () => (dispatch) => {
         }
     );
 }
+

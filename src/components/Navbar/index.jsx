@@ -1,16 +1,8 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
-import { IconContext } from "react-icons/lib";
 import {
   Nav,
-  NavBtn,
-  NavBtnLink,
-  NavbarContainer,
-  NavLogo,
-  MobileIcon,
-  NavItem,
-  NavMenu,
 } from "../../styles/Style";
 import { logout } from "../../store/actions/auth";
 import { clearResponse } from "../../store/actions/response";
@@ -54,6 +46,11 @@ const Navbar = (props) => {
             <li className="nav-item">
               <a href="/login" className="nav-link" onClick={logOut}>
                 LogOut
+              </a>
+            </li>
+            <li className="nav-item">
+              <a href="/profile" className="nav-link">
+                My profile
               </a>
             </li>
           </div>
