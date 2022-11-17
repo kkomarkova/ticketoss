@@ -1,0 +1,63 @@
+
+.ticket-img-container{
+
+    width: 60%;
+    margin: 10% auto;
+    height: 100px;
+    object-fit: cover;
+    position: relative;
+}
+.ticket-img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+}
+
+h3{
+    font-size: 50px
+}
+
+.event-text{
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    margin: 2%;
+}
+.event-location{
+    right: 2%;
+}
+.event-price{
+    top: 50%;
+    left: 40%;
+}
+.event-date{
+    right: 2%;
+    top: 100%;
+}
+
+
+
+/* Ticket info container */
+
+.ticket-info-container{
+    margin-top: -3% !important;
+    width: 60%;
+    margin: 10% auto;
+    height: 150px;
+    object-fit: cover;
+    background-color: rgb(177, 172, 172);
+    position: relative;
+}
+.event-creationDate{
+    right: 2%;
+}
+.event-description{
+    top : 30%;
+}
+.event-location-info{
+    bottom: 0;
+}
+.event-expirationDate{
+    right: 2%;
+    bottom:0%;
+}

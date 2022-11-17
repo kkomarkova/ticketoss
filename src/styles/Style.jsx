@@ -165,13 +165,14 @@ export const Info = styled.div`
 export const Nav = styled.nav`
   background: ${({ scrollNav }) => (scrollNav ? "#000" : "transparent")};
   height: 80px;
-  margin-top: -80px;
   display: flex;
   justify-content: center;
   font-size: 1rem;
-  position: sticky;
-  top: 0;
   z-index: 10;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
 
   @media screen and (max-width: 960px) {
     transition: 0.8s all ease;
@@ -820,4 +821,24 @@ export const Text = styled.span`
   margin-top: 24px;
   color: #fff;
   font-size: 14px;
+`;
+/* Login and Register form */ 
+export const FormContainer = styled.div`
+width: 40%;
+margin: 10% auto;
+margin-buttom: 0;
+background: #D9D9D9;
+padding 2%;
+border: none;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 800;
+font-size: 16px;
+line-height: 26px;
+`;
+
+export const FormPB = styled.img`
+width: 30%;
+height: auto;
+margin: auto;
 `;

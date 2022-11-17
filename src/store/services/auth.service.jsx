@@ -18,24 +18,32 @@ const register = (
     });
 };
 
-const login = async (Email, Password) => {
+const login = async (
+    Email, 
+    Password
+    ) => {
         const response = await axios
         .post(API_URL + "authenticate", {
             Email,
             Password,
         });
-    if (response.data.accessToken) {
-        localStorage.setItem("user", JSON.stringify(response.data));
+    if (response.data.token) {
+        localStorage.setItem("AccessToken", JSON.stringify(response.data.token));
     }
     return response.data;
-    }
+}
 
 const logout = () => {
-        localStorage.removeItem("user");
+        localStorage.removeItem("AccessToken");
     }
+ 
+const getCurrentUser = () => {
+    return JSON.parse(localStorage.getItem('AccessToken'));;
+}
     
-    export default {
+export default {
         register,
         login,
         logout,
+        getCurrentUser
     };
