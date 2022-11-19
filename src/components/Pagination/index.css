@@ -25,13 +25,16 @@
     cursor: pointer;
   }
   .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
-    background-color: #47ccde ;
+    background-color: #ffffff ;
     border-color: #47ccde;
     outline: none ;
+    color: black !important;
   }
   .pagination > li > a, .pagination > li > span{
-    color: #47ccde
+    color: #47ccde !important;
+    background-color: black;
   }
   .pagination > li:first-child > a, .pagination > li:first-child > span, .pagination > li:last-child > a, .pagination > li:last-child > span{
-    border-radius: unset
+    border-radius: unset;
+    background-color: black;
   }
