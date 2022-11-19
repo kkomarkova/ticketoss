@@ -5,6 +5,7 @@
   "dependencies": {
     "-": "^0.0.1",
     "@splidejs/react-splide": "^0.7.11",
+    "@syncfusion/ej2-data": "^20.3.56",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -22,6 +23,7 @@
     "react-router-dom": "^6.4.1",
     "react-scripts": "5.0.1",
     "react-scroll": "^1.8.7",
+    "react-select": "^5.6.1",
     "react-tabs": "^5.1.0",
     "react-toastify": "^9.0.8",
     "react-validation": "^3.0.7",

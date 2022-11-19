@@ -3,6 +3,7 @@ import Ticket from "../components/Ticket";
 import TicketService from "../store/services/ticket.service";
 import "../pages/pages.css";
 import Seller from "../components/Seller";
+import { Link } from "react-router-dom";
 
 
 const TicketPage = () => {
@@ -29,7 +30,7 @@ const TicketPage = () => {
   
   return (  
     <>
-      <h1>Ticket View</h1>
+      <h1 className="ticket-header">Single ticket View</h1>
       <div className="single-ticket-page">
         <div className="single-ticket">
           <Ticket 
@@ -46,6 +47,9 @@ const TicketPage = () => {
           <Seller 
             name={"Seller Name"}
           />
+          <Link to={"/cartOverview"}>
+          <button className="add-cart-btn">Add to Cart </button>
+          </Link>
         </div>
       </div>
     </>
