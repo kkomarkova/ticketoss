@@ -6,6 +6,7 @@ import RegisterPage from "../pages/Register";
 import LoginPage from "../pages/Login";
 import TicketPage from "../pages/Ticket";
 import Test from "../components/Home/index";
+import CartOverview from "../pages/CartOverview";
 
 
 
@@ -20,6 +21,7 @@ const AppRouter = () => {
             <Route path={routeConstants.login} element={<LoginPage />} />
             <Route path={routeConstants.ticket} element={<TicketPage />} />
             <Route path={routeConstants.test} element={<Test />} />
+            <Route path={routeConstants.cartOverview} element={<CartOverview/>} />
           </Routes>
     );
   }
