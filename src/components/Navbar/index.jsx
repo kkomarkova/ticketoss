@@ -1,15 +1,12 @@
 import React, { useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
-import {
-  Nav,
-} from "../../styles/Style";
+import { Nav } from "../../styles/Style";
 import { logout } from "../../store/actions/auth";
+import "./index.scss";
 import { clearResponse } from "../../store/actions/response";
 
 const Navbar = (props) => {
-  
-
   const { user: currentUser } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
@@ -22,51 +19,59 @@ const Navbar = (props) => {
   }, [dispatch, location]);
 
   const logOut = useCallback(() => {
-    dispatch(logout())
-      .then(() => {
-        props.history.push("/");
-        window.location.reload();
+    dispatch(logout()).then(() => {
+      props.history.push("/");
+      window.location.reload();
     });
   }, [dispatch]);
-
 
   return (
     <>
       <Nav className="navbar navbar-expand navbar-dark bg-dark">
-        <Link to={"/"} className="navbar-brand">
-          Ticket Resale
-        </Link>
-        {currentUser ? (
-          <div className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <Link to={"/profile"} className="nav-link">
-                 {currentUser.email}
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+          <ul className="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <Link to={"/"} className="navbar-brand p-4">
+                ticketoss
               </Link>
             </li>
-            <li className="nav-item">
-              <a href="/login" className="nav-link" onClick={logOut}>
-                LogOut
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="/profile" className="nav-link">
-                My profile
-              </a>
-            </li>
+          </ul>
+        </div>
+        {currentUser ? (
+          <div className="navbar-collapse collapse w-100 order-1 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+              <li className="nav-item">
+                <Link to={"/profile"} className="nav-link">
+                  {currentUser.email}
+                </Link>
+              </li>
+              <li className="nav-item">
+                <a href="/login" className="nav-link" onClick={logOut}>
+                  LogOut
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="/profile" className="nav-link">
+                  My profile
+                </a>
+              </li>
+            </ul>
           </div>
         ) : (
-          <div className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <Link to={"/login"} className="nav-link">
-                Login
-              </Link>
-            </li>
+          <div className="navbar-nav">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <Link to={"/login"} className="nav-link">
+                  Login
+                </Link>
+              </li>
 
-            <li className="nav-item">
-              <Link to={"/register"} className="nav-link">
-                Sign Up
-              </Link>
-            </li>
+              <li className="nav-item btn btn primary">
+                <Link to={"/register"} className="nav-link-signup">
+                  Sign Up
+                </Link>
+              </li>
+            </ul>
           </div>
         )}
       </Nav>
