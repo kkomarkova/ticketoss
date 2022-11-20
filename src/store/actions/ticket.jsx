@@ -10,6 +10,7 @@ import {
 import TicketService from '../services/ticket.service';
 
 export const createTicket = (
+    userId,
     name,
     description,
     price,
@@ -19,6 +20,7 @@ export const createTicket = (
     number
     ) => (dispatch) => {
     return TicketService.createTicket(
+        userId,
         name,
         description,
         price,
