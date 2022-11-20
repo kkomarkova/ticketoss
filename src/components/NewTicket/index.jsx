@@ -2,6 +2,7 @@ import React,{ useState, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
+import CheckButton from "react-validation/build/button";
 import { 
     FormContainer, 
     FormPB 
@@ -9,11 +10,33 @@ import {
 
 import { createTicket } from "../../store/actions/ticket";
 
+
+
+const requiredField = (value) => {
+    if (!value) {
+        return (
+            <div className="alert alert-danger" role="alert">   
+                This field is required!
+            </div>
+        );
+    }
+};
+
+const validName = (value) => {
+    if (value.length < 3 || value.length > 20) {
+        return (
+            <div className="alert alert-danger" role="alert">
+                The ticketname should be more than 3 characters.
+            </div>
+        );
+    }
+};
 const NewTicket = () => {
     
     const form = useRef();
     const checkBtn = useRef();
 
+    const [userId, setUserId] = useState("6342f741fe731b83c0bfcef1");
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState("");
@@ -23,10 +46,13 @@ const NewTicket = () => {
     const [number, setNumber] = useState("");
     const [successful, setSuccessful] = useState(false);
 
-    const { response } = useSelector((state) => state.message);
+    const { response } = useSelector((state) => state.response);
     const dispatch = useDispatch();
 
-
+    const onChangeUserId = (e) => {
+        const userId = e.target.value;
+        setUserId(userId);
+    };
     const onChangeName = (e) => {
         const name = e.target.value;
         setName(name);
@@ -70,6 +96,7 @@ const NewTicket = () => {
         if (checkBtn.current.context._errors.length === 0) {
             dispatch(
                 createTicket(
+                    userId,
                     name,
                     description,
                     price,
@@ -80,11 +107,11 @@ const NewTicket = () => {
                 ))
                 .then(() => {
                     setSuccessful(true);
-                    alert("Ticket created successfully");
+                    //alert("Ticket created successfully");
                     })
                 .catch(() => {
                     setSuccessful(false);
-                    alert("Ticket creation failed");
+                    //alert("Ticket creation failed");
                 });
         }
     };
@@ -100,6 +127,17 @@ const NewTicket = () => {
                     {!successful && (
                         <div>
                             <div className="form-group">
+                                <label htmlFor="userId">User</label>
+                                <Input
+                                    type="hidden"
+                                    className="form-control"
+                                    name="userId"
+                                    value={userId}
+                                    onChange={onChangeUserId}
+                                    validations={[requiredField]}
+                                />
+                            </div>
+                            <div className="form-group">
                                 <label htmlFor="name">Name</label>
                                 <Input
                                     type="text"
@@ -107,9 +145,9 @@ const NewTicket = () => {
                                     name="name"
                                     value={name}
                                     onChange={onChangeName}
+                                    validations={[requiredField, validName]}
                                 />
                             </div>
-
                             <div className="form-group">
                                 <label htmlFor="description">Description</label>
                                 <Input
@@ -118,6 +156,7 @@ const NewTicket = () => {
                                     name="description"
                                     value={description}
                                     onChange={onChangeDescription}
+                                    validations={[requiredField]}
                                 />
                             </div>
                             <div className="form-group">
@@ -128,16 +167,18 @@ const NewTicket = () => {
                                     name="price"
                                     value={price}
                                     onChange={onChangePrice}
+                                    validations={[requiredField]}
                                 />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="eventDate">Event Date</label>
                                 <Input
-                                    type="text"
+                                    type="date"
                                     className="form-control"
                                     name="eventDate"
                                     value={eventDate}
                                     onChange={onChangeEventDate}
+                                    validations={[requiredField]}
                                 />
                             </div>
                             <div className="form-group">
@@ -148,6 +189,7 @@ const NewTicket = () => {
                                     name="location"
                                     value={location}
                                     onChange={onChangeLocation}
+                                    validations={[requiredField]}
                                 />
                             </div>
                             <div className="form-group">
@@ -158,33 +200,30 @@ const NewTicket = () => {
                                     name="category"
                                     value={category}
                                     onChange={onChangeCategory}
+                                    validations={[requiredField]}
                                 />  
                             </div>
                             <div className="form-group">
                                 <label htmlFor="number">Number</label>
                                 <Input
-                                    type="text"
+                                    type="number"
                                     className="form-control"
                                     name="number"
                                     value={number}
                                     onChange={onChangeNumber}
+                                    validations={[requiredField]}
                                 />
                             </div>
-                            <div className="form-group">
-                                <button className="btn btn-primary btn-block">Create</button>
-                            </div>
                         </div>
-                    )}
-                    {response && (
-                        <div className="form-group">
-                            <div
-                                className={ successful ? "alert alert-success" : "alert alert-danger" }
-                                role="alert"
-                            >
-                                {response.message}
-                            </div>
-                        </div>
-                    )}
+                        )}
+                            {response && (
+                                <div className="form-group">
+                                    <div className={ successful ? "alert alert-success" : "alert alert-danger" } role="alert">
+                                    {response.message}
+                                    </div>
+                                </div>
+                            )}
+                    <CheckButton ref={checkBtn}>Create</CheckButton>
                 </Form>
             </FormContainer>
         </>
