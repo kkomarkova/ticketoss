@@ -1,7 +1,6 @@
 /*home-page css*/
 
 .home-body h1{
-
     padding-top: 10%;
     text-align: center;
     color: white;
@@ -9,23 +8,27 @@
 .home-ticket{
     margin-top: -5%;
     margin-bottom: -5%;
-    cursor: pointer;
+    /*cursor: pointer;*/
 }
 .home-background-img{
-    position: absolute;
+    position: fixed;
     max-width: 100%;
     z-index: -1;
+    background-attachment: fixed;
 }
 .home-ticket .ticket-info-container{
     display: none;
 }
 .home-body .ticket-container{
-    margin: 10% auto;
+    margin: -2% auto;
     display: block;
 }
 
 
 /*Ticket-page css*/
+.ticket-header{
+    margin: 9% 7% -2%;
+}
 
 .single-ticket-page h1{
     padding-top: 8%;
@@ -41,8 +44,37 @@
     width: 80%;
     margin: 8% auto !important;
 }
-
 .single-ticket-page{
     display: grid;
     grid-template-columns: 3fr 1fr;
+}
+.add-cart-btn{
+    background-color: #145FDD;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10%;
+    width: 90%;
+    font-size: 20px;
+}
+
+/*cartOverview-page css*/
+
+.cart-overview{
+    padding-top: 8%;
+    margin-left: 7%;
+}
+.cartOverview-page .ticket-img-container{
+    width: 80%;
+    margin: 7% auto;
+}
+.cartOverview-page .ticket-info-container{
+    display: none;
+}
+
+.cartOverview-page{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    margin-top: -2%;
 }

@@ -4,7 +4,7 @@ const profile = '/profile';
 const register = '/register';
 const ticket = '/ticket';
 const test = '/test';
-
+const cartOverview = '/cartOverview';
 
 const routeConstants = {  
     home, 
@@ -12,7 +12,8 @@ const routeConstants = {
     profile, 
     register,
     ticket,
-    test
+    test,
+    cartOverview
 };
 
 export default routeConstants;
