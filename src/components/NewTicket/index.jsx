@@ -119,15 +119,11 @@ const NewTicket = () => {
     return (
         <>
             <FormContainer>
-                <FormPB 
-                    src="https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png"
-                    alt="Ticket"
-                />
                 <Form onSubmit={handleCreation} ref={form}>
                     {!successful && (
                         <div>
                             <div className="form-group">
-                                <label htmlFor="userId">User</label>
+                                {/* <label htmlFor="userId">User</label> */}
                                 <Input
                                     type="hidden"
                                     className="form-control"
