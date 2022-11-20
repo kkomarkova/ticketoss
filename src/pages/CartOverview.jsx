@@ -3,7 +3,7 @@ import Ticket from "../components/Ticket";
 import PriceInfo from "../components/PriceInfo";
 import "../pages/pages.css";
 
-const TicketPage = () => {
+const CartOverview = () => {
   return (  
     <>
       <h1 className="cart-overview">Cart overview</h1>
@@ -18,4 +18,4 @@ const TicketPage = () => {
     </>
   );
 }
-export default TicketPage;
+export default CartOverview;
