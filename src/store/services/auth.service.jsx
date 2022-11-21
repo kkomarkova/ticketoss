@@ -26,11 +26,15 @@ const login = async (
         .post("user/authenticate", {
             Email,
             Password,
+        })
+        .then((response) => {
+            console.log(response.body);
         });
     if (response.data.token) {
         TokenService.setUser(response.data.token);
-        //localStorage.setItem("AccessToken", JSON.stringify(response.data.token));
+        //localStorage.setItem("refreshToken", JSON.stringify(response.data.refreshToken.token));
     }
+    
     return response.data;
 }
 
@@ -39,7 +43,7 @@ const logout = () => {
     }
  
 const getCurrentUser = () => {
-    return JSON.parse(localStorage.getItem('user'));;
+    return JSON.parse(localStorage.getItem('accessToken'));;
 }
     
 const AuthService = {
