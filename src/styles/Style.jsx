@@ -359,7 +359,7 @@ export const SidebarMenu = styled.ul`
 
 //Main Section
 export const MainContainer = styled.div`
-  backgroun: #0c0c0c;
+  background: #0c0c0c;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -397,11 +397,14 @@ export const MainSectionBg = styled.div`
 `;
 
 export const VideoBg = styled.video`
-width:100%
-height:100%
+min-width:100%;
+min-height:100%;
+width: auto; 
+height: auto; 
 -o-object-fit: cover
 object-fit: cover;
-background: #232a34
+// background: #232a34;
+background-size: 100% 100%;
 `;
 
 export const MainContent = styled.div`
@@ -822,7 +825,7 @@ export const Text = styled.span`
   color: #fff;
   font-size: 14px;
 `;
-/* Login and Register form */ 
+/* Login and Register form */
 export const FormContainer = styled.div`
 width: 40%;
 margin: 10% auto;
@@ -838,7 +841,7 @@ line-height: 26px;
 `;
 
 export const FormPB = styled.img`
-width: 30%;
-height: auto;
-margin: auto;
+  width: 30%;
+  height: auto;
+  margin: auto;
 `;
