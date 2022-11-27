@@ -78,3 +78,34 @@
     grid-template-columns: 3fr 1fr;
     margin-top: -2%;
 }
+
+/*confirmation-page css*/
+
+.confirmation-page{
+    padding-top: 4%;
+    padding-bottom: 4%;
+    width: 70%;
+    margin: 8% auto 0 auto;
+    background-color: #D9D9D9;
+    text-align: center;
+}
+
+.circle {
+  position: relative;
+  background: #000;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin: 3% auto;
+}
+
+.checkmark {
+  position: absolute;
+  transform: rotate(45deg) translate(-50%, -50%);
+  left: 35%;
+  top: 45%;
+  height: 67px;
+  width: 29px;
+  border-bottom: 3px solid white;
+  border-right: 3px solid white;
+}

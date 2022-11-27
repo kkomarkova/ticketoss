@@ -6,6 +6,7 @@ const ticket = '/ticket';
 const test = '/test';
 const newTicket = '/new-ticket';
 const cartOverview = '/cartOverview';
+const confirmation = '/confirmation';
 
 const routeConstants = {  
     home, 
@@ -15,7 +16,9 @@ const routeConstants = {
     ticket,
     test,
     cartOverview,
+    confirmation
     newTicket
+
 };
 
 export default routeConstants;
