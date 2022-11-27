@@ -8,6 +8,7 @@ import TicketPage from "../pages/Ticket";
 import Test from "../components/Home/index";
 import CartOverview from "../pages/CartOverview";
 import NewTicket from "../components/NewTicket";
+import AllTicketsPage from "../pages/AllTickets";
 
 
 
@@ -23,6 +24,7 @@ const AppRouter = () => {
             <Route path={routeConstants.ticket} element={<TicketPage />} />
             <Route path={routeConstants.newTicket} element={<NewTicket />} />
             <Route path={routeConstants.cartOverview} element={<CartOverview/>} />
+            <Route path={routeConstants.alltickets} element={<AllTicketsPage />} />
 
             <Route path={routeConstants.test} element={<Test/>} />
           </Routes>

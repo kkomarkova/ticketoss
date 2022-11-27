@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState,useEffect } from 'react';
 import EventImg from "../../images/eventImg.jpg";
 import "./index.css";
 import ReactDOM from 'react-dom';
@@ -6,6 +6,13 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 
 const UserProfile = (props) => {
+  const [userid, setUserId] = useState([]);
+useEffect(() => {
+  const items = JSON.parse(localStorage.getItem('items'));
+  if (items) {
+   setUserId(items);
+  }
+}, []);
   
   return (
     <>

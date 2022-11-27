@@ -5,6 +5,7 @@ import { Nav } from "../../styles/Style";
 import { logout } from "../../store/actions/auth";
 import "./index.scss";
 import { clearResponse } from "../../store/actions/response";
+import Button from '@mui/material/Button';
 
 const Navbar = (props) => {
   const { user: currentUser } = useSelector((state) => state.auth);
@@ -55,21 +56,28 @@ const Navbar = (props) => {
                   My profile
                 </a>
               </li>
+              <li className="nav-item">
+                <a href="/alltickets" className="nav-link">
+                  Explore Tickets
+                </a>
+              </li>
             </ul>
           </div>
         ) : (
           <div className="navbar-nav">
             <ul className="navbar-nav">
-              <li className="nav-item">
-                <Link to={"/login"} className="nav-link">
+              <li className="nav-item btn btn primary">
+              <Button size="small" component={Link} className="nav-link" to={"/login"}>Login</Button>
+                {/* <Link to={"/login"} className="nav-link">
                   Login
-                </Link>
+                </Link> */}
               </li>
 
               <li className="nav-item btn btn primary">
-                <Link to={"/register"} className="nav-link-signup">
+              <Button variant="contained" component={Link} size="small" className="nav-link-signup" to="/register">Sign Up</Button>
+                {/* <Link to={"/register"} className="nav-link-signup">
                   Sign Up
-                </Link>
+                </Link> */}
               </li>
             </ul>
           </div>

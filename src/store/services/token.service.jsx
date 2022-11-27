@@ -1,11 +1,13 @@
+
+//Get from cookies
 export const getLocalRefreshToken = () => {
-    const user = JSON.parse(localStorage.getItem("user"));
+    const user = JSON.parse(document.cookie.getItem("user"));
     return user?.refreshToken.token;
   }
 
 export const getLocalAccessToken = () => {
     const user = JSON.parse(localStorage.getItem("user"));
-    return user?.token;
+    return user;
   }
 
 export const updateLocalAccessToken = (token) => {
