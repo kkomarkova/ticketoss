@@ -1,0 +1,61 @@
+
+.navbar__navigation-items ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 20px; 
+    list-style: none;
+}
+.navbar-brand{
+    //Size
+    $extra-large: 110px;
+    $large: 34px;
+    //Color
+    $brown: #2b2520;
+$green: #39dbc2;
+$pink: #f41fbf;
+$yellow: #ffed28;
+$purple: #b028ff;
+$blue: #49A7FF;
+$red: #ff3838;
+$orange: #db7953;
+
+    $random-text: 'ticketoss';
+    $stroke-width: $large * 0.05;
+    position: relative;
+    display: inline-block;
+    font-size: $large;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-style: italic;
+    color: transparent;
+    -webkit-text-stroke-width: $stroke-width;
+    -webkit-text-stroke-color: white;
+    white-space: nowrap;
+    $x: 12px;
+    $y: 15px;
+    $step: 1px;
+        
+    text-shadow: $x $y $green,
+                 $x + $step $y + $step $pink,
+                 $x + $step * 2 $y + $step * 2 $pink,
+                 $x + $step * 3 $y + $step * 3 $pink,
+                 $x + $step * 4 $y + $step * 4 $pink,
+                 $x + $step * 5 $y + $step * 5 $pink,
+                 $x + $step * 6 $y + $step * 6 $pink,
+                 $x + $step * 7 $y + $step * 7 $pink,
+}
+.navbar__navigation-items {
+    $large: 34px;
+    margin-top: 30px;
+    font-size: $large;
+    margin-left: auto;
+}
+.nav-link-signup{
+margin-right:45px;
+overflow: hidden;
+white-space: nowrap;
+
+}

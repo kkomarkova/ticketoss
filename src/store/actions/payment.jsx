@@ -1,37 +1,32 @@
 import { 
-    CREATE_TICKET_SUCCESS, 
-    CREATE_TICKET_FAIL,
-    GET_ALL_TICKETS, 
-    GET_TICKET_LOCATION, 
-    GET_TICKET_CATEGORY,
-    SET_RESPONSE
+    CREATE_PAYMENT_FAIL,
+    CREATE_PAYMENT_SUCCESS,
+    GET_ALL_PAYMENTS,
+    GET_PAYMENT,
+    SET_RESPONSE,
+    CLEAR_RESPONSE 
 } from './types';
 
-import TicketService from '../services/ticket.service';
+import PaymentService from '../services/payment.service';
 
-export const createTicket = (
-    userId,
-    name,
-    description,
-    price,
-    eventDate,
-    location,
-    category,
-    number
-    ) => (dispatch) => {
-    return TicketService.createTicket(
-        userId,
-        name,
-        description,
-        price,
-        eventDate,
-        location,
-        category,
-        number
-        ).then(
+//Create payment
+export const createPayment = (
+    CardNumber,
+    OwnerName,
+    ExpiryDate,
+    SafetyCode,
+    UserId
+) => (dispatch) => {
+    return PaymentService.createPayment(
+        CardNumber,
+        OwnerName,
+        ExpiryDate,
+        SafetyCode,
+        UserId
+    ).then(
         (response) => {
             dispatch({
-                type: CREATE_TICKET_SUCCESS,
+                type: CREATE_PAYMENT_SUCCESS,
             });
 
             dispatch({
@@ -50,7 +45,7 @@ export const createTicket = (
                 error.toString();
 
                 dispatch({
-                    type: CREATE_TICKET_FAIL,
+                    type: CREATE_PAYMENT_FAIL,
                 });
 
                 dispatch({
@@ -63,11 +58,35 @@ export const createTicket = (
     );
 };
 
-export const getAllTickets = () => (dispatch) => {
-    return TicketService.getAllTickets().then(
+//Get all payments
+export const getAllPayments = () => (dispatch) => {
+    return PaymentService.getAllPayments().then(
         (response) => {
             dispatch({
-                type: GET_ALL_TICKETS,
+                type: GET_ALL_PAYMENTS,
+            });
+
+            return Promise.resolve();
+        },
+        (error) => {
+            const message =
+                (error.response &&
+                    error.response.data &&
+                    error.response.data.message) ||
+                error.message ||
+                error.toString();
+
+            return Promise.reject();
+        }
+    );
+};
+
+//Get payment
+export const getPayment = (id) => (dispatch) => {
+    return PaymentService.getPayment(id).then(
+        (response) => {
+            dispatch({
+                type: GET_PAYMENT,
             });
 
             return Promise.resolve();
@@ -84,48 +103,3 @@ export const getAllTickets = () => (dispatch) => {
         }
     );
 }
-
-export const getTicketLocation = () => (dispatch) => {
-    return TicketService.getTicketLocation().then(
-        (response) => {
-            dispatch({
-                type: GET_TICKET_LOCATION,
-            });
-
-            return Promise.resolve();
-        },
-        (error) => {
-            const message =
-                (error.response &&
-                    error.response.data &&
-                    error.response.data.message) ||
-                error.message ||
-                error.toString();
-
-            return Promise.reject();
-        }
-    );
-}
-
-export const getTicketCategory = () => (dispatch) => {
-    return TicketService.getTicketCategory().then(
-        (response) => {
-            dispatch({
-                type: GET_TICKET_CATEGORY,
-            });
-
-            return Promise.resolve();
-        },
-        (error) => {
-            const message =
-                (error.response &&
-                    error.response.data &&
-                    error.response.data.message) ||
-                error.message ||
-                error.toString();
-
-            return Promise.reject();
-        }
-    );
-}
-
