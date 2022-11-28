@@ -21,7 +21,7 @@ const UserProfile = (props) => {
             <p>Profile info</p>
           </Tab>
           <Tab>
-            <p>Card details</p>
+            <p>{props.cardDetails}</p>
           </Tab>
           <Tab>
             <p>My purchases</p>

@@ -5,22 +5,22 @@ import UserProfile from "../UserProfile";
 
 const Profile = () => {
   
-  const { user: currentUserLogin } = useSelector((state) => state.auth);
+  const { user: UserLoggedIn } = useSelector((state) => state.auth);
 
-  if (!currentUserLogin) {
+  if (!UserLoggedIn) {
     return <Navigate to="/login" />;
   } 
-  
+
   return (
     <>
-      {currentUserLogin ? 
+      {UserLoggedIn ? 
       (
         <>
           <UserProfile
-              Email={currentUserLogin.loginUser.email}
-              Name={currentUserLogin.firstName + " " + currentUserLogin.lastName}
-              Phone={currentUserLogin.phoneNumber}
-              Token={currentUserLogin.token}
+              Email={UserLoggedIn.loginUser.email}
+              Name={UserLoggedIn.firstName + " " + UserLoggedIn.lastName}
+              Phone={UserLoggedIn.phoneNumber}
+              Token={UserLoggedIn.token}
             />
         </> 
       ) : (
