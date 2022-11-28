@@ -28,6 +28,15 @@ const TicketPage = () => {
       });
   }, []);
   
+  const handleAddToCart = () => {
+    const cartItem = JSON.parse(localStorage.getItem("cartItem"));
+    if (cartItem) {
+      localStorage.setItem("cartItem", JSON.stringify(ticket));
+    } else {
+      localStorage.setItem("cartItem", JSON.stringify(ticket));
+    }
+  };
+
   return (  
     <>
       <h1 className="ticket-header">Single ticket View</h1>
@@ -50,9 +59,7 @@ const TicketPage = () => {
           <Link to={"/cartOverview"}>
             <button 
               className="add-cart-btn"
-              onClick={() => {
-                localStorage.setItem("cartItem", JSON.stringify(ticket));
-              }}
+              onClick={handleAddToCart}
               >
                 Add to Cart </button>
           </Link>
