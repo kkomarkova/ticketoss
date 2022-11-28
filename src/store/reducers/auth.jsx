@@ -49,6 +49,7 @@ export default function auth(state = initialState, action) {
         case REFRESH_TOKEN:
             return {
                 ...state,
+                isLoggedIn: true,
                 user:{...user, accessToken:payload }
             };
 

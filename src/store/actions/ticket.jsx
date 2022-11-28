@@ -2,6 +2,7 @@ import {
     CREATE_TICKET_SUCCESS, 
     CREATE_TICKET_FAIL,
     GET_ALL_TICKETS, 
+    GET_TICKET,
     GET_TICKET_LOCATION, 
     GET_TICKET_CATEGORY,
     SET_RESPONSE
@@ -68,6 +69,7 @@ export const getAllTickets = () => (dispatch) => {
         (response) => {
             dispatch({
                 type: GET_ALL_TICKETS,
+                payload: response.data 
             });
 
             return Promise.resolve();
@@ -79,7 +81,38 @@ export const getAllTickets = () => (dispatch) => {
                     error.response.data.message) ||
                 error.message ||
                 error.toString();
+                
+            dispatch({
+                type: SET_RESPONSE,
+                payload: message,
+            });
+            
+            return Promise.reject();
+        }
+    );
+}
 
+export const getTicket = (id) => (dispatch) => {
+    return TicketService.getTicket(id).then(
+        (response) => {
+            dispatch({
+                type: GET_TICKET,
+                payload: { ticket: response.data }
+            });
+            return Promise.resolve();
+        },
+        (error) => {
+            const message =
+                (error.response &&
+                    error.response.data &&
+                    error.response.data.message) ||
+                error.message ||
+                error.toString();
+                 
+            dispatch({
+                type: SET_RESPONSE,
+                payload: message,
+            });
             return Promise.reject();
         }
     );
@@ -90,6 +123,7 @@ export const getTicketLocation = () => (dispatch) => {
         (response) => {
             dispatch({
                 type: GET_TICKET_LOCATION,
+                payload: { ticket: response.data }
             });
 
             return Promise.resolve();
@@ -101,7 +135,11 @@ export const getTicketLocation = () => (dispatch) => {
                     error.response.data.message) ||
                 error.message ||
                 error.toString();
-
+            
+            dispatch({
+                type: SET_RESPONSE,
+                payload: message,
+            });
             return Promise.reject();
         }
     );
@@ -112,6 +150,7 @@ export const getTicketCategory = () => (dispatch) => {
         (response) => {
             dispatch({
                 type: GET_TICKET_CATEGORY,
+                payload: { ticket: response.data }
             });
 
             return Promise.resolve();
@@ -123,9 +162,22 @@ export const getTicketCategory = () => (dispatch) => {
                     error.response.data.message) ||
                 error.message ||
                 error.toString();
-
+                
+            dispatch({
+                type: SET_RESPONSE,
+                payload: message,
+            });
             return Promise.reject();
         }
     );
 }
 
+const ticketActions = {
+    createTicket,
+    getAllTickets,
+    getTicket,
+    getTicketLocation,
+    getTicketCategory
+}
+
+export default ticketActions;

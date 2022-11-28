@@ -20,7 +20,7 @@ const AppRouter = () => {
             <Route path={routeConstants.profile} element={<ProfilePage />} />
             <Route path={routeConstants.register} element={<RegisterPage />} />
             <Route path={routeConstants.login} element={<LoginPage />} />
-            <Route path={routeConstants.ticket} element={<TicketPage />} />
+            <Route path={routeConstants.ticketDetails} element={<TicketPage />} />
             <Route path={routeConstants.newTicket} element={<NewTicket />} />
             <Route path={routeConstants.cartOverview} element={<CartOverview/>} />
 

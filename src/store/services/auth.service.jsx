@@ -27,14 +27,10 @@ const login = async (
             Email,
             Password,
         })
-        .then((response) => {
-            console.log(response.body);
-        });
-    if (response.data.token) {
-        TokenService.setUser(response.data.token);
-        //localStorage.setItem("refreshToken", JSON.stringify(response.data.refreshToken.token));
-    }
-    
+        if (response.data.token) {
+                TokenService.setUser(response.data.token);    
+            }
+               
     return response.data;
 }
 
