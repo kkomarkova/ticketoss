@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "-": "^0.0.1",
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/lab": "^4.0.0-alpha.61",
     "@splidejs/react-splide": "^0.7.11",
     "@syncfusion/ej2-data": "^20.3.56",
     "@testing-library/jest-dom": "^5.16.5",
@@ -14,6 +16,7 @@
     "formik": "^2.2.9",
     "framer-motion": "^7.3.6",
     "i": "^0.3.7",
+    "js-cookie": "^3.0.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",

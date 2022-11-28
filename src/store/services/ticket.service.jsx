@@ -22,25 +22,28 @@ const createTicket = (
     });
 };
 
-const getAllTickets = () => {
-        return api.get("/Ticket/GetAllTickets");
+const getAllTickets = (params) => {
+        return api.get("/Ticket/GetAllTickets", { params });
+    };
+const getTicket = (id) => {
+    return api.get(`/Ticket/${id}`);
+};
+const getTicketLocation = (location) => {
+        return api.get(`/Ticket/tickets/location/${location}`);
     };
 
-const getTicketLocation = () => {
-        return api.get("/Ticket/tickets/location/{location}");
-    };
-
-const getTicketCategory = () => {
-        return api.get("/Ticket/tickets/{category}");
+const getTicketCategory = (category) => {
+        return api.get(`/Ticket/tickets/${category}`);
     };    
 
-const deleteTicket = () => {
-        return api.get('/Ticket/{id}');
-    };
+const deleteTicket = (id) => {
+        return api.get(`/Ticket/${id}`);
+};
 
 const TicketService = {
     createTicket,
     getAllTickets,
+    getTicket,
     getTicketLocation,
     getTicketCategory,
     deleteTicket,

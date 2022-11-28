@@ -26,11 +26,11 @@ const login = async (
         .post("user/authenticate", {
             Email,
             Password,
-        });
-    if (response.data.token) {
-        TokenService.setUser(response.data.token);
-        //localStorage.setItem("AccessToken", JSON.stringify(response.data.token));
-    }
+        })
+        if (response.data.token) {
+                TokenService.setUser(response.data.token);    
+            }
+               
     return response.data;
 }
 
@@ -39,7 +39,7 @@ const logout = () => {
     }
  
 const getCurrentUser = () => {
-    return JSON.parse(localStorage.getItem('user'));;
+    return JSON.parse(localStorage.getItem('accessToken'));;
 }
     
 const AuthService = {
