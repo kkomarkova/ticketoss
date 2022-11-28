@@ -27,7 +27,7 @@ useEffect(() => {
         setUser(response.data);
       });
   }, []);
-  console.log("userID:"+ticket.userId);
+  
   return (  
     <>
       <h1 className="ticket-header">Single ticket View</h1>
