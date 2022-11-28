@@ -1,4 +1,4 @@
-import { MainContainer,Img, MainSectionBg, VideoBg,MainContent,MainH1,MainP,MainBtnWrapper,Button, InfoContainer, InfoWrapper, InfoRow, Column1, TextWrapper, TopLine, Heading, Subtitle, BtnWrap, Column2, ImgWrap } from "../../styles/Style";
+import { MainContainer, MainSectionBg, VideoBg,MainContent,MainH1,MainP,MainBtnWrapper} from "../../styles/Style";
 import Video from "../../videos/video1.mp4";
 
 const HomePagecomponent = () => {

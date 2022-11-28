@@ -1,12 +1,9 @@
 import React from "react";
 //import Home from "../components/Home";
-import bgImg from "../images/bgIMG.jpg";
 import "../pages/pages.css";
 import Video from "../videos/video1.mp4";
-import Pagination from "../components/Pagination";
-import FilterCategory from "../components/FilterCategory";
 import Button from '@mui/material/Button';
-import { MainContainer,Img, MainSectionBg, VideoBg,MainContent,MainH1,MainP,MainBtnWrapper, InfoContainer, InfoWrapper, InfoRow, Column1, TextWrapper, TopLine, Heading, Subtitle, BtnWrap, Column2, ImgWrap } from "../styles/Style";
+import { MainContainer, MainSectionBg, VideoBg,MainContent,MainH1,MainP,MainBtnWrapper} from "../styles/Style";
 
 const HomePage = () => {
   
