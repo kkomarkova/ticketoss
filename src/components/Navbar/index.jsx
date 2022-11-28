@@ -68,9 +68,10 @@ const Navbar = (props) => {
           <div className="navbar-nav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link to={"/login"} className="nav-link">
+              <Button size="small" component={Link} className="nav-link" to={"/login"}>Login</Button>
+                {/* <Link to={"/login"} className="nav-link">
                   Login
-                </Link>
+                </Link> */}
               </li>
 
               <li className="nav-item btn btn primary">
