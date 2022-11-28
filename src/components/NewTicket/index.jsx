@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
+import Box from '@mui/material/Box';
+import ProfileImg from "../../images/pb.jpg";
 import { 
     FormContainer, 
     FormPB 
@@ -118,7 +120,13 @@ const NewTicket = () => {
 
     return (
         <>
-            <FormContainer>
+        <FormContainer className="card card-container">
+        <FormPB
+        className="profileIMG"
+          src={ProfileImg}
+          alt="profile-img"
+        />
+            
                 <Form onSubmit={handleCreation} ref={form}>
                     {!successful && (
                         <div>
@@ -219,7 +227,13 @@ const NewTicket = () => {
                                     </div>
                                 </div>
                             )}
+                            <Box
+  display="flex"
+  justifyContent="center"
+  alignItems="center"
+>
                     <CheckButton ref={checkBtn}>Create</CheckButton>
+                    </Box>
                 </Form>
             </FormContainer>
         </>
