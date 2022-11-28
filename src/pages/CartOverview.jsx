@@ -2,10 +2,8 @@ import React, { useState, useEffect } from "react";
 import Ticket from "../components/Ticket";
 import PriceInfo from "../components/PriceInfo";
 import "../pages/pages.css";
-import { useParams } from "react-router-dom";
 
 const CartOverview = () => {
-  const { id } = useParams();
   const [ticket, setTicket] = useState([]);
   const [price, setPrice] = useState(0);
 

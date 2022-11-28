@@ -32,6 +32,7 @@ const TicketPage = () => {
     const cartItem = JSON.parse(localStorage.getItem("cartItem"));
     if (cartItem) {
       localStorage.setItem("cartItem", JSON.stringify(ticket));
+      alert("Ticket added to cart");
     } else {
       localStorage.setItem("cartItem", JSON.stringify(ticket));
     }
