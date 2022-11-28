@@ -28,7 +28,7 @@ const [tickets, setTickets] = useState([]);
   justifyContent="center"
   alignItems="center"
 >
-<Button variant="contained"endIcon={<AddCircleOutlineSharpIcon/>} size="small" className="nav-link"> Add ticket</Button>
+<Button variant="contained" component={Link} to="/new-ticket"endIcon={<AddCircleOutlineSharpIcon/>} size="small" className="nav-link"> Add ticket</Button>
 </Box>
       
               
