@@ -67,7 +67,7 @@ const Navbar = (props) => {
         ) : (
           <div className="navbar-nav">
             <ul className="navbar-nav">
-              <li className="nav-item">
+              <li className="nav-item btn btn primary">
               <Button size="small" component={Link} className="nav-link" to={"/login"}>Login</Button>
                 {/* <Link to={"/login"} className="nav-link">
                   Login
@@ -75,9 +75,7 @@ const Navbar = (props) => {
               </li>
 
               <li className="nav-item btn btn primary">
-                <Link to={"/register"} className="nav-link-signup">
-                  Sign Up
-                </Link>
+              <Button variant="contained" component={Link} size="small" className="nav-link-signup" to="/register">Sign Up</Button>
               </li>
             </ul>
           </div>
