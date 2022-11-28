@@ -2,7 +2,8 @@ const home = '/';
 const login = '/login';
 const profile = '/profile';
 const register = '/register';
-const ticket = '/ticket';
+const ticket = '/tickets';
+const ticketDetails = '/tickets/:id';
 const test = '/test';
 const newTicket = '/new-ticket';
 const cartOverview = '/cartOverview';
@@ -15,7 +16,8 @@ const routeConstants = {
     ticket,
     test,
     cartOverview,
-    newTicket
+    newTicket,
+    ticketDetails
 };
 
 export default routeConstants;
