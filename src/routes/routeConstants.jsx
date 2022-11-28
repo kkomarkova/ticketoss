@@ -7,6 +7,7 @@ const ticketDetails = '/tickets/:id';
 const test = '/test';
 const newTicket = '/new-ticket';
 const cartOverview = '/cartOverview';
+const confirmation = '/confirmation';
 
 const routeConstants = {  
     home, 
@@ -17,7 +18,10 @@ const routeConstants = {
     test,
     cartOverview,
     newTicket,
-    ticketDetails
+    ticketDetails,
+    confirmation,
+    newTicket
+
 };
 
 export default routeConstants;

@@ -13,7 +13,7 @@ return (
             <p>Tax 25</p>
           </div>
         
-          <Link to={"/ticket"}>
+          <Link to={"/confirmation"}>
           <button className="payment-btn">Proceed to payment </button>
           </Link>
         </div>
