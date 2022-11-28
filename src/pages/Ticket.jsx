@@ -1,54 +1,54 @@
 import React, { useState, useEffect } from "react";
 import Ticket from "../components/Ticket";
 import TicketService from "../store/services/ticket.service";
+import UserService from "../store/services/user.service";
 import "../pages/pages.css";
 import Seller from "../components/Seller";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 
 const TicketPage = () => {
 
-  const [ticket, setTicket] = useState([0]);
+  const { id } = useParams();
+  const [ticket, setTicket] = useState([]);
+  const [user, setUser] = useState([]);
+  
   
   useEffect(() => {
-      TicketService.getAllTickets().then(
-        (response) => {
-          setTicket(response.data);
-        },
-        (error) => {
-          const _content =
-            (error.response &&
-              error.response.data) ||
-            error.message ||
-            error.toString();
-
-            setTicket(_content);
-        }
-      );
-    }, []);
-
+    TicketService.getTicket(id)
+      .then((response) => {
+        setTicket(response.data);
+      });
+  }, []);
   
+useEffect(() => {
+    UserService.getUser(ticket.userId)
+      .then((response) => {
+        setUser(response.data);
+      });
+  }, []);
+  console.log("userID:"+ticket.userId);
   return (  
     <>
       <h1 className="ticket-header">Single ticket View</h1>
       <div className="single-ticket-page">
         <div className="single-ticket">
           <Ticket 
-            name={ticket[2].name}
-            location={ticket[2].location}
-            price={ticket[2].price}
-            eventDate={ticket[2].eventDate}
-            creationDate={ticket[2].creationDate}
-            description={ticket[2].description}
-            expirationDate={ticket[2].expirationDate}
+            name={ticket.name}
+            location={ticket.location}
+            price={ticket.price}
+            eventDate={ticket.eventDate}
+            creationDate={ticket.creationDate}
+            description={ticket.description}
+            expirationDate={ticket.expirationDate}
           /> 
         </div>
         <div>
           <Seller 
-            name={"Seller Name"}
+            sellerName={ticket.userId}
           />
           <Link to={"/cartOverview"}>
-          <button className="add-cart-btn">Add to Cart </button>
+            <button className="add-cart-btn">Add to Cart </button>
           </Link>
         </div>
       </div>
