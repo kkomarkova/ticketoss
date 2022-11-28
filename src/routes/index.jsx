@@ -9,6 +9,7 @@ import Test from "../components/Home/index";
 import CartOverview from "../pages/CartOverview";
 import Confirmation from "../pages/Confirmation";
 import NewTicket from "../components/NewTicket";
+import AllTicketsPage from "../pages/AllTickets";
 
 
 
@@ -25,7 +26,7 @@ const AppRouter = () => {
             <Route path={routeConstants.newTicket} element={<NewTicket />} />
             <Route path={routeConstants.cartOverview} element={<CartOverview/>} />
             <Route path={routeConstants.confirmation} element={<Confirmation/>} />
-
+            <Route path={routeConstants.alltickets} element={<AllTicketsPage />} />
           </Routes>
     );
   }

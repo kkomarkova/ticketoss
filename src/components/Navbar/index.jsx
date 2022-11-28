@@ -55,6 +55,11 @@ const Navbar = (props) => {
                   My profile
                 </a>
               </li>
+              <li className="nav-item">
+                <a href="/alltickets" className="nav-link">
+                  Explore Tickets
+                </a>
+              </li>
             </ul>
           </div>
         ) : (

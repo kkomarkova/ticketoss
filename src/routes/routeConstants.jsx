@@ -8,6 +8,7 @@ const test = '/test';
 const newTicket = '/new-ticket';
 const cartOverview = '/cartOverview';
 const confirmation = '/confirmation';
+const alltickets = '/alltickets';
 
 const routeConstants = {  
     home, 
@@ -20,7 +21,8 @@ const routeConstants = {
     newTicket,
     ticketDetails,
     confirmation,
-    newTicket
+    newTicket,
+    alltickets,
 
 };
 
