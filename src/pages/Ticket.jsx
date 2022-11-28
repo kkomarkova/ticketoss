@@ -21,7 +21,7 @@ const TicketPage = () => {
       });
   }, []);
   
-useEffect(() => {
+  useEffect(() => {
     UserService.getUser(ticket.userId)
       .then((response) => {
         setUser(response.data);
@@ -48,7 +48,13 @@ useEffect(() => {
             sellerName={ticket.userId}
           />
           <Link to={"/cartOverview"}>
-            <button className="add-cart-btn">Add to Cart </button>
+            <button 
+              className="add-cart-btn"
+              onClick={() => {
+                localStorage.setItem("cartItem", JSON.stringify(ticket));
+              }}
+              >
+                Add to Cart </button>
           </Link>
         </div>
       </div>
