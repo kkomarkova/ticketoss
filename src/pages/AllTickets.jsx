@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import Pagination from "../components/Pagination";
 import Ticket from "../components/Ticket";
 import TicketService from "../store/services/ticket.service";
+import Box from "@material-ui/core/Box";
 import FilterCategory from "../components/FilterCategory";
+import Button from "@mui/material/Button";
+import AddCircleOutlineSharpIcon from '@mui/icons-material/AddCircleOutlineSharp';
 import bgImg from "../images/bgIMG.jpg";
 import { Link } from "react-router-dom";
 
@@ -20,6 +23,15 @@ const [tickets, setTickets] = useState([]);
     <div className="home-body">
       <img className="home-background-img" src={bgImg} alt="Background"/>
       <h1 >Browse all tickets</h1>
+      <Box
+  display="flex"
+  justifyContent="center"
+  alignItems="center"
+>
+<Button variant="contained"endIcon={<AddCircleOutlineSharpIcon/>} size="small" className="nav-link"> Add ticket</Button>
+</Box>
+      
+              
       <div className="filter-category">
       </div>
       <div className="home-ticket">
@@ -37,12 +49,18 @@ const [tickets, setTickets] = useState([]);
             />
           </Link>
         ))}
+        <Box
+  display="flex"
+  justifyContent="center"
+  alignItems="center"
+>
           <Pagination 
             itemsCount={10}
             pageSize={2}
             currentPage={1}
             onPageChange={page => console.log(page)}
           />
+          </Box>
       </div>
     </div>
     </>
