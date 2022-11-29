@@ -1,4 +1,6 @@
 import React, { useEffect, useCallback } from "react";
+import Button from "@mui/material/Button";
+import AddCircleOutlineSharpIcon from '@mui/icons-material/AddCircleOutlineSharp';
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 import { Nav } from "../../styles/Style";
@@ -38,8 +40,8 @@ const Navbar = (props) => {
           </ul>
         </div>
         {currentUser ? (
-          <div className="navbar-collapse collapse w-100 order-1 dual-collapse2">
-            <ul class="navbar-nav ml-auto">
+          <div className="navbar-nav">
+            <ul class="navbar-nav">
               <li className="nav-item">
                 <Link to={"/profile"} className="nav-link">
                   {currentUser.email}
@@ -52,7 +54,12 @@ const Navbar = (props) => {
               </li>
               <li className="nav-item">
                 <a href="/profile" className="nav-link">
-                  My profile
+                  Profile
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="/alltickets" className="nav-link">
+                  Tickets
                 </a>
               </li>
             </ul>
@@ -61,9 +68,10 @@ const Navbar = (props) => {
           <div className="navbar-nav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link to={"/login"} className="nav-link">
+              <Button size="small" component={Link} className="nav-link" to={"/login"}>Login</Button>
+                {/* <Link to={"/login"} className="nav-link">
                   Login
-                </Link>
+                </Link> */}
               </li>
 
               <li className="nav-item btn btn primary">
