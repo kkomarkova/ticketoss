@@ -2,7 +2,6 @@ import React from "react";
 import { Navigate } from 'react-router-dom';
 import { useSelector } from "react-redux";
 import UserProfile from "../UserProfile";
-import UserService from "../../store/services/user.service";
 
 const Profile = () => {
   

@@ -11,7 +11,7 @@ import {
 } from "../../styles/Style";
 import ProfileImg from "../../images/pb.jpg";
 import { login } from "../../store/actions/auth";
-import AuthService from "../../store/services/auth.service";
+
 
 const required = (value) => {
     if (!value) {

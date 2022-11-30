@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import Ticket from "../components/Ticket";
 import TicketService from "../store/services/ticket.service";
@@ -11,7 +12,7 @@ const TicketPage = () => {
 
   const { id } = useParams();
   const [ticket, setTicket] = useState([]);
-  const [user, setUser] = useState([]);
+  const [setUser] = useState([]);
   
   
   useEffect(() => {
@@ -19,6 +20,7 @@ const TicketPage = () => {
       .then((response) => {
         setTicket(response.data);
       });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
   useEffect(() => {
