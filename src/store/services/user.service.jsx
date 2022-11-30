@@ -1,11 +1,12 @@
 import api from "./api";
+import authHeader from "./auth-header";
 
 const getAllUsers = () => {
-  return api.get('/User/GetAllUsers');
+  return api.get('/User/GetAllUsers', { headers: authHeader() });
 };
 
 const getUser = () => {
-  return api.get('/User/{id}');
+  return api.get('/User/{id}', { headers: authHeader() });
 };
 
 

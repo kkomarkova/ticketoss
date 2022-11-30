@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
+import Box from '@mui/material/Box';
+import ProfileImg from "../../images/pb.jpg";
 import { 
     FormContainer, 
     FormPB 
@@ -107,23 +109,36 @@ const NewTicket = () => {
                 ))
                 .then(() => {
                     setSuccessful(true);
-                    //alert("Ticket created successfully");
                     })
                 .catch(() => {
                     setSuccessful(false);
-                    //alert("Ticket creation failed");
                 });
+            alert("Ticket created successfully");
+             //Delete the input in the form after submit
+                setName("");
+                setDescription("");
+                setPrice("");
+                setEventDate("");
+                setLocation("");
+                setCategory("");
+                setNumber("");
         }
     };
 
+
     return (
         <>
-            <FormContainer>
+        <FormContainer className="card card-container">
+        <FormPB
+        className="profileIMG"
+          src={ProfileImg}
+          alt="profile-img"
+        />
+            
                 <Form onSubmit={handleCreation} ref={form}>
                     {!successful && (
                         <div>
                             <div className="form-group">
-                                {/* <label htmlFor="userId">User</label> */}
                                 <Input
                                     type="hidden"
                                     className="form-control"
@@ -212,14 +227,20 @@ const NewTicket = () => {
                             </div>
                         </div>
                         )}
-                            {response && (
-                                <div className="form-group">
-                                    <div className={ successful ? "alert alert-success" : "alert alert-danger" } role="alert">
-                                    {response.message}
-                                    </div>
+                        {response && (
+                            <div className="form-group">
+                                <div className={ successful ? "alert alert-success" : "alert alert-danger" } role="alert">
+                                {response.message}
                                 </div>
-                            )}
-                    <CheckButton ref={checkBtn}>Create</CheckButton>
+                            </div>
+                        )}
+                    <Box
+                        display="flex"
+                        justifyContent="center"
+                        alignItems="center"
+                    >
+                        <CheckButton style={{ margin: "3% auto 0", display: "block"}} className="btn btn-primary btn-block test"ref={checkBtn}>Create</CheckButton>
+                    </Box>
                 </Form>
             </FormContainer>
         </>

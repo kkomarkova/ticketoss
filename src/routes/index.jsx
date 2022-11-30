@@ -12,10 +12,8 @@ import NewTicket from "../components/NewTicket";
 import AllTicketsPage from "../pages/AllTickets";
 
 
-
-
-
 const AppRouter = () => {
+  
     return (
           <Routes>
             <Route path={routeConstants.home} element={<HomePage />} exact />

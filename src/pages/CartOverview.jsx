@@ -4,15 +4,13 @@ import PriceInfo from "../components/PriceInfo";
 import "../pages/pages.css";
 
 const CartOverview = () => {
-  const [ticket, setTicket] = useState([]);
-  const [price, setPrice] = useState(0);
 
+  const [ticket, setTicket] = useState([]);
+  
   //Get ticket from local storage
   useEffect(() => {
     const cartItem = JSON.parse(localStorage.getItem("cartItem"));
     setTicket(cartItem);
-    setPrice(cartItem.price);
-    console.log(cartItem);
   }, []);
   return (  
     <>
