@@ -1,99 +1,93 @@
-import React,{ useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
-import Box from '@mui/material/Box';
+import Box from "@mui/material/Box";
 import ProfileImg from "../../images/pb.jpg";
-import { 
-    FormContainer, 
-    FormPB 
-} from "../../styles/Style";
+import { FormContainer, FormPB } from "../../styles/Style";
 
 import { createTicket } from "../../store/actions/ticket";
 
-
-
 const requiredField = (value) => {
-    if (!value) {
-        return (
-            <div className="alert alert-danger" role="alert">   
-                This field is required!
-            </div>
-        );
-    }
+  if (!value) {
+    return (
+      <div className="alert alert-danger" role="alert">
+        This field is required!
+      </div>
+    );
+  }
 };
 
 const validName = (value) => {
-    if (value.length < 3 || value.length > 20) {
-        return (
-            <div className="alert alert-danger" role="alert">
-                The ticketname should be more than 3 characters.
-            </div>
-        );
-    }
+  if (value.length < 3 || value.length > 20) {
+    return (
+      <div className="alert alert-danger" role="alert">
+        The ticketname should be more than 3 characters.
+      </div>
+    );
+  }
 };
 const NewTicket = () => {
-    
-    const form = useRef();
-    const checkBtn = useRef();
+  const form = useRef();
+  const checkBtn = useRef();
 
-    const [userId, setUserId] = useState("6342f741fe731b83c0bfcef1");
-    const [name, setName] = useState("");
-    const [description, setDescription] = useState("");
-    const [price, setPrice] = useState("");
-    const [eventDate, setEventDate] = useState("");
-    const [location, setLocation] = useState("");
-    const [category, setCategory] = useState("");
-    const [number, setNumber] = useState("");
-    const [successful, setSuccessful] = useState(false);
+  const [userId, setUserId] = useState("6342f741fe731b83c0bfcef1");
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [price, setPrice] = useState("");
+  const [eventDate, setEventDate] = useState("");
+  const [location, setLocation] = useState("");
+  const [category, setCategory] = useState("");
+  const [number, setNumber] = useState("");
+  const [successful, setSuccessful] = useState(false);
 
-    const { response } = useSelector((state) => state.response);
-    const dispatch = useDispatch();
+  const { response } = useSelector((state) => state.response);
+  const dispatch = useDispatch();
 
-    const onChangeUserId = (e) => {
-        const userId = e.target.value;
-        setUserId(userId);
-    };
-    const onChangeName = (e) => {
-        const name = e.target.value;
-        setName(name);
-    };
+  const onChangeUserId = (e) => {
+    const userId = e.target.value;
+    setUserId(userId);
+  };
+  const onChangeName = (e) => {
+    const name = e.target.value;
+    setName(name);
+  };
 
-    const onChangeDescription = (e) => {
-        const description = e.target.value;
-        setDescription(description);
-    };
-    
-    const onChangePrice = (e) => {
-        const price = e.target.value;
-        setPrice(price);
-    };
+  const onChangeDescription = (e) => {
+    const description = e.target.value;
+    setDescription(description);
+  };
 
-    const onChangeEventDate = (e) => {
-        const eventDate = e.target.value;
-        setEventDate(eventDate);
-    };
+  const onChangePrice = (e) => {
+    const price = e.target.value;
+    setPrice(price);
+  };
 
-    const onChangeLocation = (e) => {
-        const location = e.target.value;
-        setLocation(location);
-    };
+  const onChangeEventDate = (e) => {
+    const eventDate = e.target.value;
+    setEventDate(eventDate);
+  };
 
-    const onChangeCategory = (e) => {
-        const category = e.target.value;
-        setCategory(category);
-    };
+  const onChangeLocation = (e) => {
+    const location = e.target.value;
+    setLocation(location);
+  };
 
-    const onChangeNumber = (e) => {
-        const number = e.target.value;
-        setNumber(number);
-    };
+  const onChangeCategory = (e) => {
+    const category = e.target.value;
+    setCategory(category);
+  };
 
-    const handleCreation = (e) => {
-        e.preventDefault();
+  const onChangeNumber = (e) => {
+    const number = e.target.value;
+    setNumber(number);
+  };
 
-        form.current.validateAll();
+  const handleCreation = (e) => {
+    e.preventDefault();
+
+    form.current.validateAll();
 
         if (checkBtn.current.context._errors.length === 0) {
             dispatch(
@@ -248,4 +242,3 @@ const NewTicket = () => {
 };
 
 export default NewTicket;
-

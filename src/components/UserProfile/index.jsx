@@ -10,8 +10,8 @@ const UserProfile = (props) => {
        <div className="App">
       <h1 value={"UserName"}>My profile </h1>
       <div class="seller-profile">
-            <div>
-            <img src={""} title="#" alt="pb"/></div>
+            {/* <div>
+            <img src={""} title="#" alt="pb"/></div> */}
             <h2 >{props.Name}</h2>
           </div>
       
@@ -20,18 +20,18 @@ const UserProfile = (props) => {
           <Tab>
             <p>Profile info</p>
           </Tab>
-          <Tab>
+          {/* <Tab>
             <p>{props.cardDetails}</p>
+          </Tab> */}
+          <Tab>
+            <p>My purchased tickets</p>
           </Tab>
           <Tab>
-            <p>My purchases</p>
+            <p>Sold tickets</p>
           </Tab>
-          <Tab>
-            <p>Sell a ticket</p>
-          </Tab>
-          <Tab>
+          {/* <Tab>
             <p>Title 5</p>
-          </Tab>
+          </Tab> */}
         </TabList>
 
         <TabPanel>
