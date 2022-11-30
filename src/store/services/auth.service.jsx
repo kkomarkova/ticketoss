@@ -1,5 +1,7 @@
 import api from "./api";
 import TokenService from "./token.service";
+import jwtDecode from "jwt-decode";
+import axios from "axios";
 
 
 const register = (
@@ -28,9 +30,10 @@ const login = async (
             Password,
         })
         if (response.data.token) {
-                TokenService.setUser(response.data.token);    
+                TokenService.setUser(response.data.token);   
+                
             }
-               
+            axios.defaults.headers.common["Authorization"] = `Bearer ${response.data.token}`;  
     return response.data;
 }
 
@@ -39,7 +42,9 @@ const logout = () => {
     }
  
 const getCurrentUser = () => {
-    return JSON.parse(localStorage.getItem('accessToken'));;
+    const jwt = localStorage.getItem("accessToken");
+  if (jwt === "undefined") return null;
+  return jwt ? jwtDecode(jwt) : null; //decodes the jwt payload
 }
     
 const AuthService = {

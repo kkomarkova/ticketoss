@@ -21,13 +21,23 @@ const TicketPage = () => {
       });
   }, []);
   
-useEffect(() => {
+  useEffect(() => {
     UserService.getUser(ticket.userId)
       .then((response) => {
         setUser(response.data);
       });
   }, []);
   
+  const handleAddToCart = () => {
+    const cartItem = JSON.parse(localStorage.getItem("cartItem"));
+    if (cartItem) {
+      localStorage.setItem("cartItem", JSON.stringify(ticket));
+      alert("Ticket added to cart");
+    } else {
+      localStorage.setItem("cartItem", JSON.stringify(ticket));
+    }
+  };
+
   return (  
     <>
       <h1 className="ticket-header">Single ticket View</h1>
@@ -48,7 +58,11 @@ useEffect(() => {
             sellerName={ticket.userId}
           />
           <Link to={"/cartOverview"}>
-            <button className="add-cart-btn">Add to Cart </button>
+            <button 
+              className="add-cart-btn"
+              onClick={handleAddToCart}
+              >
+                Add to Cart </button>
           </Link>
         </div>
       </div>

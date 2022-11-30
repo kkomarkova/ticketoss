@@ -44,9 +44,7 @@ const Navbar = (props) => {
           <div className="navbar-nav">
             <ul class="navbar-nav">
               <li className="nav-item">
-                <Link to={"/profile"} className="nav-link">
-                  {currentUser.email}
-                </Link>
+                <Link to={"/profile"} className="nav-link" />
               </li>
               <li className="nav-item">
                 <a href="/login" className="nav-link" onClick={logOut}>
@@ -69,14 +67,10 @@ const Navbar = (props) => {
           <div className="navbar-nav">
             <ul className="navbar-nav">
               <li className="nav-item btn btn primary">
-              <Button size="small" component={Link} className="nav-link" to={"/login"}>Login</Button>
-                {/* <Link to={"/login"} className="nav-link">
-                  Login
-                </Link> */}
+                <Button size="small" component={Link} className="nav-link" to={"/login"}>Login</Button>
               </li>
-
               <li className="nav-item btn btn primary">
-              <Button variant="contained" component={Link} size="small" className="nav-link-signup" to="/register">Sign Up</Button>
+                <Button variant="contained" component={Link} size="small" className="nav-link-signup" to="/register">Sign Up</Button>
               </li>
             </ul>
           </div>

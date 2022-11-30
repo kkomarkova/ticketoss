@@ -89,155 +89,156 @@ const NewTicket = () => {
 
     form.current.validateAll();
 
-    if (checkBtn.current.context._errors.length === 0) {
-      dispatch(
-        createTicket(
-          userId,
-          name,
-          description,
-          price,
-          eventDate,
-          location,
-          category,
-          number
-        )
-      )
-        .then(() => {
-          setSuccessful(true);
-          // alert("Ticket created successfully");
-        })
-        .catch(() => {
-          setSuccessful(false);
-          // alert("Ticket creation failed");
-        });
-    }
-  };
+        if (checkBtn.current.context._errors.length === 0) {
+            dispatch(
+                createTicket(
+                    userId,
+                    name,
+                    description,
+                    price,
+                    eventDate,
+                    location,
+                    category,
+                    number
+                ))
+                .then(() => {
+                    setSuccessful(true);
+                    })
+                .catch(() => {
+                    setSuccessful(false);
+                });
+            alert("Ticket created successfully");
+             //Delete the input in the form after submit
+                setName("");
+                setDescription("");
+                setPrice("");
+                setEventDate("");
+                setLocation("");
+                setCategory("");
+                setNumber("");
+        }
+    };
 
-  return (
-    <>
-      <FormContainer className="card card-container">
-        <FormPB className="profileIMG" src={ProfileImg} alt="profile-img" />
 
-        <Form onSubmit={handleCreation} ref={form}>
-          {!successful && (
-            <div>
-              <div className="form-group">
-                {/* <label htmlFor="userId">User</label> */}
-                <Input
-                  type="hidden"
-                  className="form-control"
-                  name="userId"
-                  value={userId}
-                  onChange={onChangeUserId}
-                  validations={[requiredField]}
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="name">Name</label>
-                <Input
-                  type="text"
-                  className="form-control"
-                  name="name"
-                  value={name}
-                  onChange={onChangeName}
-                  validations={[requiredField, validName]}
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="description">Description</label>
-                <Input
-                  type="text"
-                  className="form-control"
-                  name="description"
-                  value={description}
-                  onChange={onChangeDescription}
-                  validations={[requiredField]}
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="price">Price</label>
-                <Input
-                  type="text"
-                  className="form-control"
-                  name="price"
-                  value={price}
-                  onChange={onChangePrice}
-                  validations={[requiredField]}
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="eventDate">Event Date</label>
-                <Input
-                  type="date"
-                  className="form-control"
-                  name="eventDate"
-                  value={eventDate}
-                  onChange={onChangeEventDate}
-                  validations={[requiredField]}
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="location">Location</label>
-                <Input
-                  type="text"
-                  className="form-control"
-                  name="location"
-                  value={location}
-                  onChange={onChangeLocation}
-                  validations={[requiredField]}
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="category">Category</label>
-                <Input
-                  type="text"
-                  className="form-control"
-                  name="category"
-                  value={category}
-                  onChange={onChangeCategory}
-                  validations={[requiredField]}
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="number">Number</label>
-                <Input
-                  type="number"
-                  className="form-control"
-                  name="number"
-                  value={number}
-                  onChange={onChangeNumber}
-                  validations={[requiredField]}
-                />
-              </div>
-              <div className="form-group">
-                <button className="btn btn-primary btn-block">
-                  Create Ticket
-                </button>
-              </div>
-            </div>
-          )}
-          {response && (
-            <div className="form-group">
-              <div
-                className={
-                  successful ? "alert alert-success" : "alert alert-danger"
-                }
-                role="alert"
-              >
-                {response.message}
-              </div>
-            </div>
-          )}
-          <Box display="flex" justifyContent="center" alignItems="center">
-            <CheckButton
-              style={{ display: "none" }}
-              ref={checkBtn}
-            ></CheckButton>
-          </Box>
-        </Form>
-      </FormContainer>
-    </>
-  );
+    return (
+        <>
+        <FormContainer className="card card-container">
+        <FormPB
+        className="profileIMG"
+          src={ProfileImg}
+          alt="profile-img"
+        />
+            
+                <Form onSubmit={handleCreation} ref={form}>
+                    {!successful && (
+                        <div>
+                            <div className="form-group">
+                                <Input
+                                    type="hidden"
+                                    className="form-control"
+                                    name="userId"
+                                    value={userId}
+                                    onChange={onChangeUserId}
+                                    validations={[requiredField]}
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="name">Name</label>
+                                <Input
+                                    type="text"
+                                    className="form-control"
+                                    name="name"
+                                    value={name}
+                                    onChange={onChangeName}
+                                    validations={[requiredField, validName]}
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="description">Description</label>
+                                <Input
+                                    type="text"
+                                    className="form-control"
+                                    name="description"
+                                    value={description}
+                                    onChange={onChangeDescription}
+                                    validations={[requiredField]}
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="price">Price</label>
+                                <Input
+                                    type="text"
+                                    className="form-control"
+                                    name="price"
+                                    value={price}
+                                    onChange={onChangePrice}
+                                    validations={[requiredField]}
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="eventDate">Event Date</label>
+                                <Input
+                                    type="date"
+                                    className="form-control"
+                                    name="eventDate"
+                                    value={eventDate}
+                                    onChange={onChangeEventDate}
+                                    validations={[requiredField]}
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="location">Location</label>
+                                <Input
+                                    type="text"     
+                                    className="form-control"
+                                    name="location"
+                                    value={location}
+                                    onChange={onChangeLocation}
+                                    validations={[requiredField]}
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="category">Category</label>
+                                <Input
+                                    type="text"
+                                    className="form-control"
+                                    name="category"
+                                    value={category}
+                                    onChange={onChangeCategory}
+                                    validations={[requiredField]}
+                                />  
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="number">Number</label>
+                                <Input
+                                    type="number"
+                                    className="form-control"
+                                    name="number"
+                                    value={number}
+                                    onChange={onChangeNumber}
+                                    validations={[requiredField]}
+                                />
+                            </div>
+                        </div>
+                        )}
+                        {response && (
+                            <div className="form-group">
+                                <div className={ successful ? "alert alert-success" : "alert alert-danger" } role="alert">
+                                {response.message}
+                                </div>
+                            </div>
+                        )}
+                    <Box
+                        display="flex"
+                        justifyContent="center"
+                        alignItems="center"
+                    >
+                        <CheckButton style={{ margin: "3% auto 0", display: "block"}} className="btn btn-primary btn-block test"ref={checkBtn}>Create</CheckButton>
+                    </Box>
+                </Form>
+            </FormContainer>
+        </>
+    );
 };
 
 export default NewTicket;
