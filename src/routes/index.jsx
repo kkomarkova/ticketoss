@@ -5,7 +5,6 @@ import ProfilePage from "../pages/Profile";
 import RegisterPage from "../pages/Register";
 import LoginPage from "../pages/Login";
 import TicketPage from "../pages/Ticket";
-import Test from "../components/Home/index";
 import CartOverview from "../pages/CartOverview";
 import Confirmation from "../pages/Confirmation";
 import NewTicket from "../components/NewTicket";

@@ -1,6 +1,6 @@
 import React from "react";
 import "./index.css";
-import { Link, useLocation } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 const PriceInfo = (props) => {
   

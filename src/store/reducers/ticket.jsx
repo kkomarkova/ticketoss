@@ -29,12 +29,7 @@ export default function ticket(state = initialState, action) {
                 isLoggedIn: true,
                 ticket: payload.ticket,
             };
-        case GET_TICKET:
-            return {
-                ...state,
-                isLoggedIn: true,
-                ticket: payload.ticket,
-            };    
+        
         case GET_TICKET_LOCATION:
             return {
                 ...state,

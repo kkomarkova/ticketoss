@@ -1,7 +1,4 @@
-import React, { useState, useEffect } from "react";
-import TicketService from "../../store/services/ticket.service";
-import Ticket from "../Ticket";
-import NewTicket from "../NewTicket";
+
 
 const Home = () => {
 

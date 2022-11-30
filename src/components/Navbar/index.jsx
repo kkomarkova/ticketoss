@@ -1,6 +1,5 @@
 import React, { useEffect, useCallback } from "react";
 import Button from "@mui/material/Button";
-import AddCircleOutlineSharpIcon from '@mui/icons-material/AddCircleOutlineSharp';
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 import { Nav } from "../../styles/Style";
@@ -15,6 +14,7 @@ const Navbar = (props) => {
   var location = useLocation();
 
   useEffect(() => {
+
     if (["/login", "/register"].includes(location.pathname)) {
       dispatch(clearResponse()); // clear message when changing location
     }
@@ -25,6 +25,7 @@ const Navbar = (props) => {
       props.history.push("/");
       window.location.reload();
     });
+    // eslint-disable-next-line
   }, [dispatch]);
 
   return (
