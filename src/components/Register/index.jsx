@@ -133,8 +133,9 @@ const Register = () => {
 
   return (
     <>
-      <FormContainer>
+      <FormContainer className="card card-container">
         <FormPB
+        className="profileIMG"
           src={ProfileImg}
           alt="profile-img"
         />

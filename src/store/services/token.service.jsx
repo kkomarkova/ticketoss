@@ -1,34 +1,39 @@
+import api from './api';
+
 export const getLocalRefreshToken = () => {
-    const user = JSON.parse(localStorage.getItem("user"));
+    const user = JSON.parse(localStorage.getItem("refreshToken"));
     return user?.refreshToken.token;
   }
 
 export const getLocalAccessToken = () => {
-    const user = JSON.parse(localStorage.getItem("user"));
+    const user = JSON.parse(localStorage.getItem("accessToken"));
     return user?.token;
   }
 
 export const updateLocalAccessToken = (token) => {
-    let user = JSON.parse(localStorage.getItem("user"));
+    let user = JSON.parse(localStorage.getItem("accessToken"));
     user.token = token;
-    localStorage.setItem("user", JSON.stringify(user));
+    localStorage.setItem("accessToken", JSON.stringify(user));
   }
 
+export const refreshToken = () => {
+    const refreshToken = getLocalRefreshToken();
+    return api.post("/user/refresh-token", refreshToken );
+}  
 export const getUser = () => {
-    return JSON.parse(localStorage.getItem("user"));
+    return JSON.parse(localStorage.getItem("accessToken"));
   }
 
 export const setUser = (user) =>  {
-    console.log(JSON.stringify(user));
-    localStorage.setItem("user", JSON.stringify(user));
+    localStorage.setItem("acessToken", JSON.stringify(user));
   }
 
 export const removeUser = () => {
-    localStorage.removeItem("user");
+    localStorage.clear();
   }
 
  const TokenService = {
-    getLocalRefreshToken,
+    refreshToken,
     getLocalAccessToken,
     updateLocalAccessToken,
     getUser,

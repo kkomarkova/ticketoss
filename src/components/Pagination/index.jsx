@@ -1,87 +1,43 @@
-import React, {Component} from 'react'
-import axios from 'axios'
-import ReactPaginate from 'react-paginate';
-import "./index.css";
-import Ticket from "../Ticket";
+import React from "react";
+import _ from "lodash";
+import propTypes from "prop-types";
 
-
-export default class App extends Component {
-  constructor(props) {
-      super(props);
-      this.state = {
-          offset: 0,
-          data: [],
-          perPage: 5,
-          currentPage: 0
-      };
-      this.handlePageClick = this
-          .handlePageClick
-          .bind(this);
-  }
-  receivedData() {
-      axios
-          .get(`https://localhost:7067/api/Ticket/GetAllTickets`)  //Reads from our local DB 
-          .then(res => {
-
-              const data = res.data;
-              const slice = data.slice(this.state.offset, this.state.offset + this.state.perPage) 
-              const postData = slice.map(pd => 
-              <>
-                    <Ticket
-                        key={pd.id}
-                        name={pd.name}
-                        location={pd.location}
-                        price={pd.price}
-                        eventDate={pd.eventDate}
-                        creationDate={pd.creationDate}
-                        description={pd.description}
-                        expirationDate={pd.expirationDate}
-                    />
-              </>
-              )
-
-              this.setState({
-                  pageCount: Math.ceil(data.length / this.state.perPage),
-                 
-                  postData
-              })
-          });
-  }
-  handlePageClick = (e) => {
-      const selectedPage = e.selected;
-      const offset = selectedPage * this.state.perPage;
-
-      this.setState({
-          currentPage: selectedPage,
-          offset: offset
-      }, () => {
-          this.receivedData()
-      });
-
-  };
-
-  componentDidMount() {
-      this.receivedData()
-  }
-  render() {
-      return (
-          <div>
-              {this.state.postData}
-              <ReactPaginate
-                  previousLabel={"prev"}
-                  nextLabel={"next"}
-                  breakLabel={"..."}
-                  breakClassName={"break-me"}
-                  pageCount={this.state.pageCount}
-                  marginPagesDisplayed={2}
-                  pageRangeDisplayed={5}
-                  onPageChange={this.handlePageClick}
-                  containerClassName={"pagination"}
-                  subContainerClassName={"pages pagination"}
-                  activeClassName={"active"}/>
-          </div>
-
-      )
-  }
+export const paginate = (items, pageNumber, pageSize) =>{
+    const startIndex = (pageNumber - 1) * pageSize;
+    return _(items).slice(startIndex).take(pageSize).value();
 }
 
+export const Pagination = (props) => {
+  const { itemsCount, pageSize, currentPage, onPageChange } = props;
+  const pagesCount = Math.ceil(itemsCount / pageSize);
+
+  if (pagesCount === 1) return null;
+
+  const pages = _.range(1, pagesCount + 1);
+
+  return (
+    <nav>
+      <ul className="pagination">
+        {pages.map((page) => (
+          <li
+            key={page}
+            className={page === currentPage ? "page-item active" : "page-item"}
+          >
+            <a href="" onClick={() => onPageChange(page)} className="page-link">
+              {page}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+};
+
+Pagination.propTypes = {
+  itemsCount: propTypes.number.isRequired,
+  pageSize: propTypes.number.isRequired,
+  currentPage: propTypes.number.isRequired,
+  onPageChange: propTypes.func.isRequired,
+};
+
+export default Pagination;

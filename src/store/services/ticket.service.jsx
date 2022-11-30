@@ -1,18 +1,7 @@
 import api from "./api";
 
-/**
- * 
- * @returns 
- * 
- * "name": "Denmark vs France",
-  "description": "World Cup 2022 in Qatar",
-  "price": "$1000",
-  "eventDate": "2022-11-10T22:32:24.515Z",
-  "location": "Qatar",
-  "category": "Football",
-  "number": "123456788"
- */
 const createTicket = (
+    UserId,
     Name,
     Description,
     Price,
@@ -22,6 +11,7 @@ const createTicket = (
     Number
     ) => {
     return api.post("/Ticket", {
+        UserId,
         Name,
         Description,
         Price,
@@ -32,25 +22,28 @@ const createTicket = (
     });
 };
 
-const getAllTickets = () => {
-        return api.get("/Ticket/GetAllTickets");
+const getAllTickets = (params) => {
+        return api.get("/Ticket/GetAllTickets", { params });
+    };
+const getTicket = (id) => {
+    return api.get(`/Ticket/${id}`);
+};
+const getTicketLocation = (location) => {
+        return api.get(`/Ticket/tickets/location/${location}`);
     };
 
-const getTicketLocation = () => {
-        return api.get("/Ticket/tickets/location/{location}");
-    };
-
-const getTicketCategory = () => {
-        return api.get("/Ticket/tickets/{category}");
+const getTicketCategory = (category) => {
+        return api.get(`/Ticket/tickets/${category}`);
     };    
 
-const deleteTicket = () => {
-        return api.get('/Ticket/{id}');
-    };
+const deleteTicket = (id) => {
+        return api.get(`/Ticket/${id}`);
+};
 
 const TicketService = {
     createTicket,
     getAllTickets,
+    getTicket,
     getTicketLocation,
     getTicketCategory,
     deleteTicket,

@@ -8,7 +8,7 @@ import {
 } from '../actions/types';
 
 //The auth reducer updates the auth state when a user logs in or out
-const user = JSON.parse(localStorage.getItem('user'));
+const user = JSON.parse(localStorage.getItem('accessToken'));
 
 const initialState = user
     ? { isLoggedIn: true, user }
@@ -49,6 +49,7 @@ export default function auth(state = initialState, action) {
         case REFRESH_TOKEN:
             return {
                 ...state,
+                isLoggedIn: true,
                 user:{...user, accessToken:payload }
             };
 

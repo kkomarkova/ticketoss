@@ -2,27 +2,26 @@ import React from "react";
 import { Navigate } from 'react-router-dom';
 import { useSelector } from "react-redux";
 import UserProfile from "../UserProfile";
-import NewTicket from "../NewTicket";
 
 const Profile = () => {
   
-  const { user: currentUserLogin } = useSelector((state) => state.auth);
-  const { user: currentUser } = useSelector((state) => state.user);
+  const { user: UserLoggedIn } = useSelector((state) => state.auth);
 
-  if (!currentUserLogin) {
+  if (!UserLoggedIn) {
     return <Navigate to="/login" />;
   } 
-  
+
   return (
     <>
-      {currentUserLogin ? 
+      {UserLoggedIn ? 
       (
         <>
           <UserProfile
-              Email={currentUserLogin.loginUser.email}
-              Token={currentUserLogin.token}
+              Email={UserLoggedIn.loginUser.email}
+              Name={UserLoggedIn.firstName + " " + UserLoggedIn.lastName}
+              Phone={UserLoggedIn.phoneNumber}
+              Token={UserLoggedIn.token}
             />
-          {/* <NewTicket /> */}
         </> 
       ) : (
         <Navigate to="/login" />

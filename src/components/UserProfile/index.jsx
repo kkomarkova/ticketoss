@@ -1,7 +1,5 @@
 import React from "react";
-import EventImg from "../../images/eventImg.jpg";
 import "./index.css";
-import ReactDOM from 'react-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 
@@ -12,9 +10,9 @@ const UserProfile = (props) => {
        <div className="App">
       <h1 value={"UserName"}>My profile </h1>
       <div class="seller-profile">
-            <div>
-            <img src={""} title="#"/></div>
-            <h2 >{props.Email}</h2>
+            {/* <div>
+            <img src={""} title="#" alt="pb"/></div> */}
+            <h2 >{props.Name}</h2>
           </div>
       
       <Tabs>
@@ -22,23 +20,23 @@ const UserProfile = (props) => {
           <Tab>
             <p>Profile info</p>
           </Tab>
+          {/* <Tab>
+            <p>{props.cardDetails}</p>
+          </Tab> */}
           <Tab>
-            <p>Card details</p>
+            <p>My purchased tickets</p>
           </Tab>
           <Tab>
-            <p>My purchases</p>
+            <p>Sold tickets</p>
           </Tab>
-          <Tab>
-            <p>Sell a ticket</p>
-          </Tab>
-          <Tab>
+          {/* <Tab>
             <p>Title 5</p>
-          </Tab>
+          </Tab> */}
         </TabList>
 
         <TabPanel>
           <div className="panel-content">
-            <p>Name</p>
+            <strong><p>Name</p></strong>
             <p>{props.Name}</p>
             <p>Email</p>
             <p>{props.Email}</p>
