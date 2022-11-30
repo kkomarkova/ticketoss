@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import TextField from "@mui/material/TextField";
+import { format } from 'date-fns';
 
 const AllTicketsPage = () => {
 const [tickets, setTickets] = useState([]);
@@ -63,8 +64,8 @@ const[selectedOption, setSelectedOption] = useState(ticketCategory[0].value);
   return (
   <>
     <div className="home-body">
-      <img className="home-background-img" src={bgImg} alt="Background"/>
-      <h1 >Browse all tickets</h1>
+      {/* <img className="home-background-img" src={bgImg} alt="Background"/> */}
+      {/* <h1 >Browse all tickets</h1> */}
       {/* <p className="col-lg-10 mx-auto">Filter Ticket by Category</p>
       
       <select className="form-select form-select-lg" value={selectedOption} onChange={event => updateSelectedItem(event)}>
@@ -72,15 +73,19 @@ const[selectedOption, setSelectedOption] = useState(ticketCategory[0].value);
           <option key={option.value} value={option.value}>{option.label}</option>
         ))}
       </select> */}
-      <Box
+    
+  
+<Box
   display="flex"
   justifyContent="center"
   alignItems="center"
+  marginTop={15}
 >
       <form>
       <TextField
       id="search-bar"
       className="text"
+    
       onChange={(e) => {
         searchItems(e.target.value);
       }}
@@ -94,11 +99,13 @@ const[selectedOption, setSelectedOption] = useState(ticketCategory[0].value);
     </IconButton>}
   </form>
   </Box>
-      <Box
+  <Box
   display="flex"
   justifyContent="center"
   alignItems="center"
   marginTop={2}
+  marginRight={2}
+
 >
 <Button variant="contained" component={Link} to="/new-ticket"endIcon={<AddCircleOutlineSharpIcon/>} size="small" className="nav-link"> Add ticket</Button>
 </Box>
