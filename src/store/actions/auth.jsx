@@ -104,3 +104,35 @@ export const refreshToken = (accessToken) => (dispatch) => {
     })
   }
   
+ export const getCurrentUser = () => (dispatch) => {
+    return AuthService.getCurrentUser().then(
+        (user) => {
+            dispatch({
+                type: LOGIN_SUCCESS,
+                payload: {user: user
+                    },
+                    });
+            return Promise.resolve();
+        },
+        (error) => {
+            const message =
+                (error.response &&
+                    error.response.data &&
+                    error.response.data.message) ||
+                error.message ||
+                error.toString();
+
+            dispatch({
+                type: LOGIN_FAIL,
+            });
+
+            dispatch({
+                type: SET_RESPONSE,
+                payload: message,
+            });
+
+            return Promise.reject();
+        }
+    );
+};
+    

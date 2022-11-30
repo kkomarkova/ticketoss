@@ -2,6 +2,12 @@ import React, { useState, useEffect } from "react";
 import "../pages/pages.css";
 
 const Confirmation = () => {
+  const [order, setOrder] = useState([]);
+
+  useEffect(() => {
+    const cartItem = JSON.parse(localStorage.getItem("cartItem"));
+    setOrder(cartItem);
+  }, []);
   return (  
     <>
       <div className="confirmation-page">
@@ -10,7 +16,7 @@ const Confirmation = () => {
             <div class="checkmark"></div>
         </div>
         <h3>Thank you for your purchase !</h3>
-        <h4>Your order ID is : hdzvzededbuedhn</h4>
+        <h4>Your order ID is : {order.id}</h4>
            
       </div>
     </>

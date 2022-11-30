@@ -4,15 +4,33 @@ import PriceInfo from "../components/PriceInfo";
 import "../pages/pages.css";
 
 const CartOverview = () => {
+
+  const [ticket, setTicket] = useState([]);
+  
+  //Get ticket from local storage
+  useEffect(() => {
+    const cartItem = JSON.parse(localStorage.getItem("cartItem"));
+    setTicket(cartItem);
+  }, []);
   return (  
     <>
       <h1 className="cart-overview">Cart overview</h1>
       <div className="cartOverview-page">
         <div className="cartOverview-ticket">
-          <Ticket /> 
+          <Ticket 
+            name={ticket.name}
+            location={ticket.location}
+            price={ticket.price}
+            eventDate={ticket.eventDate}
+            creationDate={ticket.creationDate}
+            description={ticket.description}
+            expirationDate={ticket.expirationDate}
+          /> 
         </div>
         <div>
-          <PriceInfo />
+          <PriceInfo 
+            price={ticket.price}
+          />
         </div>
       </div>
     </>
