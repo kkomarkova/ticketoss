@@ -25,7 +25,6 @@ export const Pagination = (props) => {
             key={page}
             className={page === currentPage ? "page-item active" : "page-item"}
           >
-            // eslint-disable-next-line 
             <a href="" onClick={() => onPageChange(page)} className="page-link">
               {page}
             </a>

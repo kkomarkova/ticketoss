@@ -22,13 +22,7 @@ const TicketPage = () => {
       });
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  
-  useEffect(() => {
-    UserService.getUser(ticket.userId)
-      .then((response) => {
-        setUser(response.data);
-      });
-  }, []);
+
   
   const handleAddToCart = () => {
     const cartItem = JSON.parse(localStorage.getItem("cartItem"));
