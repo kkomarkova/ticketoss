@@ -1,6 +1,5 @@
 import React, { useEffect, useCallback } from "react";
 import Button from "@mui/material/Button";
-import AddCircleOutlineSharpIcon from '@mui/icons-material/AddCircleOutlineSharp';
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 import { Nav } from "../../styles/Style";
@@ -15,6 +14,7 @@ const Navbar = (props) => {
   var location = useLocation();
 
   useEffect(() => {
+
     if (["/login", "/register"].includes(location.pathname)) {
       dispatch(clearResponse()); // clear message when changing location
     }
@@ -25,6 +25,7 @@ const Navbar = (props) => {
       props.history.push("/");
       window.location.reload();
     });
+    // eslint-disable-next-line
   }, [dispatch]);
 
   return (
@@ -43,9 +44,7 @@ const Navbar = (props) => {
           <div className="navbar-nav">
             <ul class="navbar-nav">
               <li className="nav-item">
-                <Link to={"/profile"} className="nav-link">
-                  {currentUser.email}
-                </Link>
+                <Link to={"/profile"} className="nav-link" />
               </li>
               <li className="nav-item">
                 <a href="/login" className="nav-link" onClick={logOut}>
@@ -68,14 +67,10 @@ const Navbar = (props) => {
           <div className="navbar-nav">
             <ul className="navbar-nav">
               <li className="nav-item btn btn primary">
-              <Button size="small" component={Link} className="nav-link" to={"/login"}>Login</Button>
-                {/* <Link to={"/login"} className="nav-link">
-                  Login
-                </Link> */}
+                <Button size="small" component={Link} className="nav-link" to={"/login"}>Login</Button>
               </li>
-
               <li className="nav-item btn btn primary">
-              <Button variant="contained" component={Link} size="small" className="nav-link-signup" to="/register">Sign Up</Button>
+                <Button variant="contained" component={Link} size="small" className="nav-link-signup" to="/register">Sign Up</Button>
               </li>
             </ul>
           </div>

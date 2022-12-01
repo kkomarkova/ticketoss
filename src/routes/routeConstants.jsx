@@ -21,7 +21,6 @@ const routeConstants = {
     newTicket,
     ticketDetails,
     confirmation,
-    newTicket,
     alltickets,
 
 };

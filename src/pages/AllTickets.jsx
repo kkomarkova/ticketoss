@@ -3,30 +3,28 @@ import Pagination from "../components/Pagination";
 import Ticket from "../components/Ticket";
 import TicketService from "../store/services/ticket.service";
 import Box from "@material-ui/core/Box";
-import FilterCategory from "../components/FilterCategory";
 import Button from "@mui/material/Button";
 import AddCircleOutlineSharpIcon from '@mui/icons-material/AddCircleOutlineSharp';
-import bgImg from "../images/bgIMG.jpg";
 import { Link } from "react-router-dom";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import TextField from "@mui/material/TextField";
-import { format } from 'date-fns';
+
 
 const AllTicketsPage = () => {
 const [tickets, setTickets] = useState([]);
 const [filteredResults, setFilteredResults] = useState([]);
 const [searchInput, setSearchInput] = useState('');
 
-const ticketCategory = [
-  {label: "All", value: 0},
-  {label: "Sport", value: 1},
-  {label: "Music", value: 2},
-  {label: "Theatre", value: 3},
-  {label: "Concert", value: 4},
-]
+// const ticketCategory = [
+//   {label: "All", value: 0},
+//   {label: "Sport", value: 1},
+//   {label: "Music", value: 2},
+//   {label: "Theatre", value: 3},
+//   {label: "Concert", value: 4},
+// ]
   
-const[selectedOption, setSelectedOption] = useState(ticketCategory[0].value);
+//const[selectedOption, setSelectedOption] = useState(ticketCategory[0].value);
 
   useEffect(() => {
     TicketService.getAllTickets().then((response) => {
@@ -47,19 +45,19 @@ const[selectedOption, setSelectedOption] = useState(ticketCategory[0].value);
       }
   }
 
-  const updateSelectedItem = (event) => {
-    setTickets([]);
-    setSelectedOption(event.target.value);
+  // const updateSelectedItem = (event) => {
+  //   setTickets([]);
+  //   setSelectedOption(selectedOption);
     
-    fetch('https://localhost:7067/api/Ticket/tickets/' + `${ticketCategory[event.target.value].label}`)
-      .then((response) => response.json())
-      .then((data) => {setTickets(data)})
+  //   fetch('https://localhost:7067/api/Ticket/tickets/' + `${ticketCategory[event.target.value].label}`)
+  //     .then((response) => response.json())
+  //     .then((data) => {setTickets(data)})
     
 
 
 
 
-  }
+  // }
 
   return (
   <>

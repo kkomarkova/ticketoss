@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react/jsx-no-comment-textnodes */
 import React from "react";
 import _ from "lodash";
 import propTypes from "prop-types";
@@ -23,6 +25,7 @@ export const Pagination = (props) => {
             key={page}
             className={page === currentPage ? "page-item active" : "page-item"}
           >
+            // eslint-disable-next-line 
             <a href="" onClick={() => onPageChange(page)} className="page-link">
               {page}
             </a>

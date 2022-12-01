@@ -12,6 +12,7 @@ import {
 import ProfileImg from "../../images/pb.jpg";
 import { login } from "../../store/actions/auth";
 
+
 const required = (value) => {
     if (!value) {
         return (
@@ -31,7 +32,7 @@ const Login = (props) => {
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
 
-    const { isLoggedIn } = useSelector(state => state.auth);
+    const { isLoggedIn, user } = useSelector(state => state.auth);
     const { response } = useSelector(state => state.response);
 
     const dispatch = useDispatch();
@@ -45,7 +46,7 @@ const Login = (props) => {
             setPassword(password);
     };
     
-const handleLogin = (e) => {
+    const handleLogin = (e) => {
         e.preventDefault();
 
         setLoading(true);
@@ -66,6 +67,8 @@ const handleLogin = (e) => {
         }
     }
     if (isLoggedIn) {
+        //Store user id in localstorage
+        localStorage.setItem("userId", user.id);
         return <Navigate to="/profile" />;
     }
 

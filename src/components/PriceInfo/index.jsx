@@ -1,6 +1,6 @@
 import React from "react";
 import "./index.css";
-import { Link, useLocation } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 const PriceInfo = (props) => {
   
@@ -8,9 +8,9 @@ return (
     <>
        <div className="price-info-container">
           <div>
-            <h2>{props.price}Total price</h2>
-            <p>1 x 299,-</p>
-            <p>Tax 25</p>
+            <h2>Total price</h2>
+            <p>1 x {props.price},-</p>
+            <p>Tax {props.price} - 20%</p>
           </div>
         
           <Link to={"/confirmation"}>
