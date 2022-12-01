@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "https://localhost:7067/api",
+  baseURL: "https://ticketoss-api.azurewebsites.net/api",
   headers: {
     "Content-Type": "application/json",
   },
