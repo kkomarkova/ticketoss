@@ -12,7 +12,7 @@ const Navbar = (props) => {
   const dispatch = useDispatch();
 
   var location = useLocation();
-
+  
   useEffect(() => {
 
     if (["/login", "/register"].includes(location.pathname)) {
@@ -20,6 +20,7 @@ const Navbar = (props) => {
     }
   }, [dispatch, location]);
 
+  
   const logOut = useCallback(() => {
     dispatch(logout()).then(() => {
       props.history.push("/");
