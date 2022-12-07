@@ -25,7 +25,7 @@ export const getUser = () => {
   }
 
 export const setUser = (user) =>  {
-    localStorage.setItem("acessToken", JSON.stringify(user));
+    localStorage.setItem("accessToken", JSON.stringify(user));
   }
 
 export const removeUser = () => {
