@@ -233,7 +233,7 @@ const NewTicket = () => {
                         justifyContent="center"
                         alignItems="center"
                     >
-                        <CheckButton style={{ margin: "3% auto 0", display: "block"}} className="btn btn-primary btn-block test"ref={checkBtn}>Create</CheckButton>
+                        <CheckButton id="SubmitTicket" style={{ margin: "3% auto 0", display: "block"}} className="btn btn-primary btn-block test"ref={checkBtn}>Create</CheckButton>
                     </Box>
                 </Form>
             </FormContainer>

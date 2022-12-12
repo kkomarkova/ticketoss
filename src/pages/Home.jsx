@@ -14,10 +14,10 @@ const HomePage = () => {
       <VideoBg autoPlay loop muted src={Video} type='video/mp4'/>
     </MainSectionBg>
     <MainContent>
-      <MainH1>Find your next event</MainH1>
-      <MainP>What are you looking for?</MainP>
+      <MainH1 id="MainH1">Find your next event</MainH1>
+      <MainP id="MainP">Easily with Ticketoss</MainP>
       <MainBtnWrapper>
-        <Button variant="contained" component={Link} to="/allTickets">Get Started</Button>
+        <Button id="MainButton"variant="contained" component={Link} to="/allTickets">Get Started</Button>
       </MainBtnWrapper>
     </MainContent>
   </MainContainer>

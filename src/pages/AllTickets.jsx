@@ -105,7 +105,7 @@ const [searchInput, setSearchInput] = useState('');
   marginRight={2}
 
 >
-<Button variant="contained" component={Link} to="/new-ticket"endIcon={<AddCircleOutlineSharpIcon/>} size="small" className="nav-link"> Add ticket</Button>
+<Button variant="contained" id="AddTicket"component={Link} to="/new-ticket"endIcon={<AddCircleOutlineSharpIcon/>} size="small" className="nav-link"> Add ticket</Button>
 </Box>
       
               
