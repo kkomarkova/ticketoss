@@ -20,18 +20,12 @@ const UserProfile = (props) => {
           <Tab>
             <p>Profile info</p>
           </Tab>
-          {/* <Tab>
-            <p>{props.cardDetails}</p>
-          </Tab> */}
           <Tab>
             <p>My purchased tickets</p>
           </Tab>
           <Tab>
             <p>Sold tickets</p>
           </Tab>
-          {/* <Tab>
-            <p>Title 5</p>
-          </Tab> */}
         </TabList>
 
         <TabPanel>
@@ -56,16 +50,6 @@ const UserProfile = (props) => {
         <TabPanel>
           <div className="panel-content">
             <h2>Any content 3</h2>
-          </div>
-        </TabPanel>
-        <TabPanel>
-          <div className="panel-content">
-            <h2>Any content 4</h2>
-          </div>
-        </TabPanel>
-        <TabPanel>
-          <div className="panel-content">
-            <h2>Any content 5</h2>
           </div>
         </TabPanel>
       </Tabs>
