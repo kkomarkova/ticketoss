@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import Ticket from "../components/Ticket";
 import TicketService from "../store/services/ticket.service";
@@ -20,7 +19,7 @@ const TicketPage = () => {
       .then((response) => {
         setTicket(response.data);
       });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+  
   }, []);
 
   
