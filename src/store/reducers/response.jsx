@@ -1,4 +1,3 @@
-/* eslint-disable import/no-anonymous-default-export */
 import { SET_RESPONSE, CLEAR_RESPONSE } from '../actions/types';
 
 //This reducer updates response state when a response is set or cleared

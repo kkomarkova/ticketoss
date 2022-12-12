@@ -5,7 +5,7 @@ import UserProfile from "../UserProfile";
 
 const Profile = () => {
   
-  const { user: currentUser } = useSelector((state) => state.user);
+  const { user: currentUser } = useSelector((state) => state.auth);
   //TODO: 
   //Add a check to see if the user is logged in or not. 
   //If not, redirect to login page. 
