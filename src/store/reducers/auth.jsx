@@ -31,7 +31,7 @@ const auth = (state = initialState, action) => {
             return {
                 ...state,
                 isLoggedIn: true,
-                user: payload,
+                user: payload.user,
             };
         case LOGIN_FAIL:
             return {

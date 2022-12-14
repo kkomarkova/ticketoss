@@ -67,7 +67,7 @@ const Login = (props) => {
         }
     }
     if (isLoggedIn) {
-        //Store user id in localstorage
+        ///Store user id in localstorage
         localStorage.setItem("userId", user.id);
         return <Navigate to="/profile" />;
     }

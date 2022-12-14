@@ -32,9 +32,9 @@ const Navbar = (props) => {
   return (
     <>
       <Nav className="navbar navbar-expand navbar-dark bg-dark">
-        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+        <div className="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
           <ul className="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li className="nav-item active">
               <Link to={"/"} className="navbar-brand p-4">
                 ticketoss
               </Link>
@@ -43,7 +43,7 @@ const Navbar = (props) => {
         </div>
         {currentUser ? (
           <div className="navbar-nav">
-            <ul class="navbar-nav">
+            <ul className="navbar-nav">
               <li className="nav-item">
                 <Link to={"/profile"} className="nav-link" />
               </li>

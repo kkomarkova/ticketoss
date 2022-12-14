@@ -12,8 +12,8 @@ const Confirmation = () => {
     <>
       <div className="confirmation-page">
         <h2>Your order has been recevied!</h2>
-        <div class="circle">
-            <div class="checkmark"></div>
+        <div className="circle">
+            <div className="checkmark"></div>
         </div>
         <h3>Thank you for your purchase !</h3>
         <h4>Your order ID is : {order.id}</h4>
