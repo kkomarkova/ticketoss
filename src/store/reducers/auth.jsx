@@ -4,7 +4,6 @@ import {
     LOGIN_SUCCESS,
     LOGIN_FAIL,
     LOGOUT,
-    REFRESH_TOKEN,
 } from '../actions/types';
 
 //The auth reducer updates the auth state when a user logs in or out
@@ -46,13 +45,7 @@ const auth = (state = initialState, action) => {
                 isLoggedIn: false,
                 user: null,
             };
-        case REFRESH_TOKEN:
-            return {
-                ...state,
-                isLoggedIn: true,
-                user:{...user, accessToken:payload }
-            };
-
+       
         default:
             return state;
     }
