@@ -7,11 +7,8 @@ import {
     CREATE_TICKET_FAIL
 } from  '../actions/types' ;
 
-const ticketInfo = JSON.parse(localStorage.getItem('ticket'));
 
-const initialState = ticketInfo
-    ? { isLoggedIn: true, ticket: ticketInfo }
-    : { isLoggedIn: false, ticket: null };
+const initialState = {}
 
 export default function ticket(state = initialState, action) {
     const { type, payload } = action;

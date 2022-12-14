@@ -5,8 +5,6 @@ import App from "./App";
 import { Provider } from "react-redux"
 import store from "./store/store";
 import { BrowserRouter } from "react-router-dom";
-import setUpInterceptors from "./store/services/setupInterceptors";
-
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -18,5 +16,3 @@ root.render(
     </BrowserRouter>
   </Provider>
 );
-
-setUpInterceptors(store);

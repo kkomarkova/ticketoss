@@ -37,9 +37,10 @@ const UserProfile = (props) => {
             <p>Phone</p>
             <p>{props.Phone}</p>
             <p>Token</p>
-            <p>{props.Token.substring(0,20)}...{" "}
-                {props.Token.substr(props.Token.length - 20)}
-                </p>
+            <p>
+              {props.Token.substring(0,20)}...{" "}
+              {props.Token.substr(props.Token.length - 20)}
+            </p>
           </div>
         </TabPanel>
         <TabPanel>

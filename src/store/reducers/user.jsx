@@ -3,13 +3,9 @@ import {
     GET_USER,
 } from '../actions/types';
 
-const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+const initialState = {}
 
-const initialState = userInfo
-    ? { isLoggedIn: true, userInfo }
-    : { isLoggedIn: false, userInfo: null };
-
-export default function user(state = initialState, action) {
+const user = (state = initialState, action) => {
     const { type, payload } = action;
 
     switch (type) {
@@ -29,3 +25,5 @@ export default function user(state = initialState, action) {
             return state;
     }
 }
+
+export default user;

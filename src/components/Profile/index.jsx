@@ -10,23 +10,18 @@ const Profile = () => {
   //Add a check to see if the user is logged in or not. 
   //If not, redirect to login page. 
   //If yes, show profile page and get access token from local storage.
-  // useEffect(() => {
-  //   if (localStorage.getItem("accessToken")) {
-  //     console.log("User is logged in");
-  //   }
-  // }, []);
 
   if (!currentUser) {
     return <Navigate to="/login" />;
   } 
   return (
     <>
-      <UserProfile
-        Email={currentUser.loginUser.email}
-        Name={currentUser.firstName + " " + currentUser.lastName}
-        Phone={currentUser.phoneNumber}
-        Token={currentUser.token}
-      /> 
+       <UserProfile
+        Name="myName"
+        Email="myEmail"
+        Phone="myPhone"
+        Token={currentUser}
+      />  
     </>
   );
 };
