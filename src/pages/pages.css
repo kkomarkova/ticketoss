@@ -109,3 +109,68 @@
   border-bottom: 3px solid white;
   border-right: 3px solid white;
 }
+
+@media screen and (max-width: 600px) {
+    /* All tickets responsive */
+    .home-body .ticket-img-container{
+        width: 95%;
+        margin-bottom: 20%;
+    }
+    .home-body .event-location{
+        right: unset;
+        top: 30%;
+    }
+    .home-body .event-price{
+        right: 2%;
+    }
+    /* Single ticket responsive */
+    .single-ticket-page{
+        grid-template-columns: 1fr;
+    }
+    .single-ticket-page .ticket-img-container{
+        width: 95%;
+        margin: 10% auto 18% auto;
+    }
+    .single-ticket-page .ticket-info-container{
+        width: 95%;
+        margin-top: 10%;
+    }
+    .single-ticket-page .seller-container{
+        margin: auto;
+        width: 95%;
+    }
+    .single-ticket-page .add-cart-btn{
+        margin: 5% auto;
+        width: 95%;
+        display: block;
+    }
+    /* Cart overview responsive */
+    .cartOverview-page{
+        grid-template-columns: 1fr;
+    }
+    .cartOverview-page .ticket-img-container{
+        width: 95%;
+    }
+    .cartOverview-page .price-info-container{
+        width: 95%;
+        margin: 10% auto;
+    }
+    .cartOverview-page .payment-btn{
+        margin-top: 15%;
+    }
+    /* Confirmation page responsive */
+    .confirmation-page{
+        margin-top: 25%;
+        width: 95%;
+    }
+    .confirmation-page .circle{
+        width: 100px;
+        height: 100px;
+    }
+    .checkmark {
+        left: 24%;
+    }
+    .confirmation-page h3{
+        font-size: 23px;
+    }
+  }

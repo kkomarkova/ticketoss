@@ -5,8 +5,8 @@ const getAllUsers = () => {
   return api.get('/User/GetAllUsers', { headers: authHeader() });
 };
 
-const getUser = () => {
-  return api.get('/User/{id}', { headers: authHeader() });
+const getUser = (id) => {
+  return api.get(`/User/${id}`, { headers: authHeader() });
 };
 
 

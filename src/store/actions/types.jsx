@@ -6,8 +6,6 @@ export const LOGIN_FAIL = "LOGIN_FAIL";
 
 export const LOGOUT = "LOGOUT";
 
-export const REFRESH_TOKEN = "REFRESH_TOKEN";
-
 export const CREATE_TICKET_SUCCESS = "CREATE_TICKET_SUCCESS";
 export const CREATE_TICKET_FAIL = "CREATE_TICKET_FAIL";
 export const GET_ALL_TICKETS = "GET_ALL_TICKETS";

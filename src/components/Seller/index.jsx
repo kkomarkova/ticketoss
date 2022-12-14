@@ -8,13 +8,13 @@ const Seller = (props) => {
     <>
        <div className="seller-container">
         
-          <div class="seller-profile">
+          <div className="seller-profile">
             <div>
             <img src={""} title="#" alt="pb"/></div>
             <h2>{props.sellerName}</h2>
           </div>
 
-          <div class="star-rating">
+          <div className="star-rating">
             <input type="radio" name="stars" id="star-a" value="5"/>
             <label for="star-a"></label>
 

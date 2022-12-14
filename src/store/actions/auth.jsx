@@ -96,13 +96,6 @@ export const logout = () => (dispatch) => {
         type: LOGOUT,
     });
 };
-
-export const refreshToken = (accessToken) => (dispatch) => {
-    dispatch({
-      type: REFRESH_TOKEN,
-      payload: accessToken,
-    })
-  }
   
  export const getCurrentUser = () => (dispatch) => {
     return AuthService.getCurrentUser().then(

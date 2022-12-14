@@ -838,6 +838,10 @@ font-style: normal;
 font-weight: 800;
 font-size: 16px;
 line-height: 26px;
+@media screen and (max-width: 768px) {
+  width: 95%;
+  margin-top: 25%;
+}
 `;
 
 export const FormPB = styled.img`
