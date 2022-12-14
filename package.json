@@ -10,6 +10,8 @@
     "@material-ui/lab": "^4.0.0-alpha.61",
     "@mui/icons-material": "^5.10.16",
     "@mui/material": "^5.10.16",
+    "@sentry/react": "^7.26.0",
+    "@sentry/tracing": "^7.26.0",
     "@splidejs/react-splide": "^0.7.11",
     "@syncfusion/ej2-data": "^20.3.56",
     "@testing-library/jest-dom": "^5.16.5",
