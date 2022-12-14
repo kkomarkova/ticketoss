@@ -2079,6 +2079,59 @@
   "resolved" "https://registry.npmjs.org/@rushstack/eslint-patch/-/eslint-patch-1.2.0.tgz"
   "version" "1.2.0"
 
+"@sentry/browser@7.26.0":
+  "integrity" "sha512-S6uW+Ni2VLGHUV9eAUtTy5QEvqKeOhcnWnv+2yTGDtQCJ0SuHfXRCM7ASAQYBiKffZqIFc9Z2XNU/2cuWcXJmw=="
+  "resolved" "https://registry.npmjs.org/@sentry/browser/-/browser-7.26.0.tgz"
+  "version" "7.26.0"
+  dependencies:
+    "@sentry/core" "7.26.0"
+    "@sentry/types" "7.26.0"
+    "@sentry/utils" "7.26.0"
+    "tslib" "^1.9.3"
+
+"@sentry/core@7.26.0":
+  "integrity" "sha512-ydi236ZoP/xpvLdf7B8seKjCcGc5Z+q9c14tHCFusplPZgLSXcYpiiLIDWmF7OAXO89sSbb1NaFt9YB0LkYdLQ=="
+  "resolved" "https://registry.npmjs.org/@sentry/core/-/core-7.26.0.tgz"
+  "version" "7.26.0"
+  dependencies:
+    "@sentry/types" "7.26.0"
+    "@sentry/utils" "7.26.0"
+    "tslib" "^1.9.3"
+
+"@sentry/react@^7.26.0":
+  "integrity" "sha512-v5XKpG1PF4qnWvG8E0N1kcUk74lTp+TDfKx5x996NIja2oOTp/JL9V0Q+lAMlB1EKgJuxLe92IeqD5/DTtzE7A=="
+  "resolved" "https://registry.npmjs.org/@sentry/react/-/react-7.26.0.tgz"
+  "version" "7.26.0"
+  dependencies:
+    "@sentry/browser" "7.26.0"
+    "@sentry/types" "7.26.0"
+    "@sentry/utils" "7.26.0"
+    "hoist-non-react-statics" "^3.3.2"
+    "tslib" "^1.9.3"
+
+"@sentry/tracing@^7.26.0":
+  "integrity" "sha512-UK8EiXxJrDTWD82Oasj2WP/QuQ+wzPlg74vYmxl1ie/LRs6C6wHkilBZwDV9HnDdqAqSjl0al8oBa075lK+U3Q=="
+  "resolved" "https://registry.npmjs.org/@sentry/tracing/-/tracing-7.26.0.tgz"
+  "version" "7.26.0"
+  dependencies:
+    "@sentry/core" "7.26.0"
+    "@sentry/types" "7.26.0"
+    "@sentry/utils" "7.26.0"
+    "tslib" "^1.9.3"
+
+"@sentry/types@7.26.0":
+  "integrity" "sha512-U2s0q3ALwWFdHJBgn8nrG9bCTJZ3hAqL/I2Si4Mf0ZWnJ/KTJKbtyrputHr8wMbHvX0NZTJGTxFVUO46J+GBRA=="
+  "resolved" "https://registry.npmjs.org/@sentry/types/-/types-7.26.0.tgz"
+  "version" "7.26.0"
+
+"@sentry/utils@7.26.0":
+  "integrity" "sha512-nIC1PRyoMBi4QB7XNCWaPDqaQbPayMwAvUm6W3MC5bHPfVZmmFt+3sLZQKUD/E0NeQnJ3vTyPewPF/LfxLOE5A=="
+  "resolved" "https://registry.npmjs.org/@sentry/utils/-/utils-7.26.0.tgz"
+  "version" "7.26.0"
+  dependencies:
+    "@sentry/types" "7.26.0"
+    "tslib" "^1.9.3"
+
 "@sinclair/typebox@^0.24.1":
   "integrity" "sha512-1orQTvtazZmsPeBroJjysvsOQCYV2yjWlebkSY38pl5vr2tdLjEJ+LoxITlGNZaH2RE19WlAwQMkH/7C14wLfw=="
   "resolved" "https://registry.npmjs.org/@sinclair/typebox/-/typebox-0.24.43.tgz"
@@ -10273,6 +10326,11 @@
   "version" "1.14.1"
 
 "tslib@^1.8.1":
+  "integrity" "sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg=="
+  "resolved" "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
+  "version" "1.14.1"
+
+"tslib@^1.9.3":
   "integrity" "sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg=="
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   "version" "1.14.1"
