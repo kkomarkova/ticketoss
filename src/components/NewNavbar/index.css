@@ -89,7 +89,7 @@ textarea:visited:hover {
 
 /* Custom colors */
 .custom-color1 {
-  color: #00a7e1;
+  color: #39dbc2;
 }
 
 .custom-color2 {
@@ -98,12 +98,12 @@ textarea:visited:hover {
 
 .hover-custom-color1:hover,
 .hover-custom-color1:focus {
-  color: #00a7e1;
+  color: #39dbc2;
 }
 
 .hover-bg-custom-color1:hover,
 .hover-bg-custom-color1:focus {
-  background: #00a7e1;
+  background: #39dbc2;
 }
 
 .hover-custom-color2:hover,
@@ -117,7 +117,7 @@ textarea:visited:hover {
 }
 
 .b--custom-color1 {
-  border-color: #00a7e1;
+  border-color: #39dbc2;
 }
 
 .b--custom-color2 {
@@ -125,7 +125,7 @@ textarea:visited:hover {
 }
 
 .bg-custom-color1 {
-  background: #00a7e1;
+  background: #39dbc2;
 }
 
 .bg-custom-color2 {
@@ -195,7 +195,7 @@ nav a {
 /* Hover effects */
 .hover-effect1 {
   color: #ffffff;
-  background: #00a7e1;
+  background: #39dbc2;
 }
 
 .hover-effect1 span {
@@ -206,7 +206,7 @@ nav a {
 }
 
 .hover-effect1:hover {
-  color: #00a7e1;
+  color: #39dbc2;
   background: #ffffff;
   -webkit-transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
@@ -384,7 +384,7 @@ nav a {
 
 .menu-link:hover,
 .menu-link:focus {
-  background: #00a7e1;
+  background: #39dbc2;
   color: rgb(255, 255, 255);
   height: 80px;
 }
@@ -415,17 +415,17 @@ nav a {
   }
 
   .menu-item + .menu-item {
-    border-top: 1px solid #008ae6;
+    border-top: 1.3px solid #39dbc2;    ;
   }
 
   .menu-link {
-    background: #00a7e1;
+    background: #39dbc2    ;
     background: black;
 
   }
 
   .menu-link:hover {
-    background: #00a7e1;
+    background: #39dbc2;    ;
   }
 }
 

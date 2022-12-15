@@ -7,12 +7,13 @@
     border: 1px solid #3c3e43;
     color: white;
     background: #1c1d1f;
+    margin-bottom: 5%;
   }
   
   .react-tabs__tab-list {
     display: flex;
     flex-direction: column;
-    width: 170px;
+    width: 140px;
     margin: 0;
     padding: 0;
     color: white;
@@ -20,7 +21,7 @@
   }
   
   .react-tabs__tab {
-    height: 70px;
+    height: auto;
     list-style: none;
     padding: 12px 6px;
     cursor: pointer;
@@ -36,7 +37,7 @@
   
   .react-tabs__tab-panel {
     display: none;
-    width: 300px;
+    width: 60%;
   }
   
   .react-tabs__tab-panel--selected {
@@ -52,25 +53,35 @@
   }
   
   .panel-content {
+    text-align: start;
+    display: grid;
+    margin: 10%;
+    grid-gap: 0%;
+    width: 120%;
+    overflow-y: scroll;
+    height: 320px;
+  }
+  .panel-content::-webkit-scrollbar {
+    width: 0px;
+  }
+  .profile-info-data{
     text-align: end;
     display: grid;
     grid-template-columns: 1fr 6fr;
     margin: 10%;
     grid-gap: 0%;
-    width: 120%;
   }
   .panel-content p::after {
   
       content: "";
       display: block;
       margin-top: 10px;
-      border-top: 1px solid #00a7e1;
+      border-top: 1px solid #39dbc2;
     }
 
     .sold-tickets {
       display: grid;
       grid-template-columns: 1fr 3fr;
-      width: 140%;
       text-align: start;
       font-weight: bold;
     }
@@ -79,6 +90,14 @@
      text-align: end;
      font-weight: normal;
     }
+    .purchased-tickets{
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      width: 140%;
+      text-align: start;
+      font-weight: bold;
+    }
+
 
     @media only screen and (max-width: 700px) {
       .react-tabs{

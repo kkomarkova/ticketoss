@@ -5,7 +5,10 @@ import Profile from "../components/Profile";
 const ProfilePage = () => {
   return (
     <>
-        <Profile />
+    <div className="profilePage">
+        <Profile 
+        />
+    </div>
     </>
   );
 };
