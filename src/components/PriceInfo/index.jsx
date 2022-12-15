@@ -14,7 +14,7 @@ return (
           </div>
         
           <Link to={"/confirmation"}>
-          <button className="payment-btn">Proceed to payment </button>
+          <button className="payment-btn" onClick={props.OnClick}>Proceed to payment </button>
           </Link>
         </div>
     </>

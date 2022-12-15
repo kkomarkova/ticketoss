@@ -12,6 +12,11 @@ const CartOverview = () => {
     const cartItem = JSON.parse(localStorage.getItem("cartItem"));
     setTicket(cartItem);
   }, []);
+
+  const onPurchase = () => {
+    //Send ticket to backend
+    console.log("Ticket sent to backend");
+  };
   return (  
     <>
       <h1 className="cart-overview">Cart overview</h1>
@@ -30,6 +35,7 @@ const CartOverview = () => {
         <div>
           <PriceInfo 
             price={ticket.price}
+            OnClick={onPurchase}
           />
         </div>
       </div>
