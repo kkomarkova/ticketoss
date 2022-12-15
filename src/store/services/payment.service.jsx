@@ -25,27 +25,12 @@ const getOrderByUserId = (id) => {
 };
 
 const createOrder = (
-    Order
+    _tickets,
+    price,
+    buyerId
     ) => {
-    return api.post("/Order", Order={
-        orderId,
-        tickets:[
-            {
-                id,
-                tokenID,
-                name,
-                description,
-                price,
-                creationDate,
-                expirationDate,
-                eventDate,
-                location,
-                verification,
-                number,
-                category,
-                userId
-            }
-        ],
+    return api.post("/Order",{
+        tickets:[_tickets],
         price,
         buyerId
     });

@@ -2,20 +2,24 @@ import React, { useState, useEffect } from "react";
 import Ticket from "../components/Ticket";
 import PriceInfo from "../components/PriceInfo";
 import "../pages/pages.css";
+import PaymentService from "../store/services/payment.service";
 
 const CartOverview = () => {
 
   const [ticket, setTicket] = useState([]);
+  const [userInfo, setUserInfo] = useState("");
   
-  //Get ticket from local storage
+  //Getting data from local storage
+  const cartItem = JSON.parse(localStorage.getItem("cartItem"));
+  const userId = localStorage.getItem("userId");
+
   useEffect(() => {
-    const cartItem = JSON.parse(localStorage.getItem("cartItem"));
     setTicket(cartItem);
+    setUserInfo(userId);
   }, []);
 
   const onPurchase = () => {
-    //Send ticket to backend
-    console.log("Ticket sent to backend");
+    PaymentService.createOrder(ticket, ticket.price, userInfo)
   };
   return (  
     <>

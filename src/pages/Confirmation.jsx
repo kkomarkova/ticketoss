@@ -3,6 +3,8 @@ import "../pages/pages.css";
 
 const Confirmation = () => {
   const [order, setOrder] = useState([]);
+  //generating random order id
+  const randomId = Math.floor(Math.random() * 1000000000);
 
   useEffect(() => {
     const cartItem = JSON.parse(localStorage.getItem("cartItem"));
@@ -16,7 +18,7 @@ const Confirmation = () => {
             <div className="checkmark"></div>
         </div>
         <h3>Thank you for your purchase !</h3>
-        <h4>Your order ID is : {order.id}</h4>
+        <h4>Your order ID is : {randomId+order.id}</h4>
            
       </div>
     </>
