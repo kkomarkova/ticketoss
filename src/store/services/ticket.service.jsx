@@ -40,6 +40,10 @@ const deleteTicket = (id) => {
         return api.get(`/Ticket/${id}`);
 };
 
+const getTicketByUserId = (id)=>{
+    return api.get(`/Ticket/tickets/byuser/${id}`)
+}
+
 const TicketService = {
     createTicket,
     getAllTickets,
@@ -47,6 +51,7 @@ const TicketService = {
     getTicketLocation,
     getTicketCategory,
     deleteTicket,
+    getTicketByUserId
 };
 
 export default TicketService;
