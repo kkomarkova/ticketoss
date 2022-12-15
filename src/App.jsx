@@ -1,14 +1,14 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AppRouter from "./routes";
-import Navbar from "./components/Navbar";
+import NewNavbar from "./components/NewNavbar";
 
 function App() {
 
   return (
     <>
       <AppRouter />
-      <Navbar />
+      <NewNavbar />
     </>
   );
 }
