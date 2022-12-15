@@ -4,7 +4,7 @@ import {
     GET_ALL_PAYMENTS,
     GET_PAYMENT,
     SET_RESPONSE,
-    CLEAR_RESPONSE 
+    GET_ORDER_BY_USER_ID
 } from './types';
 
 import PaymentService from '../services/payment.service';
@@ -88,6 +88,10 @@ export const getPayment = (id) => (dispatch) => {
             dispatch({
                 type: GET_PAYMENT,
             });
+            dispatch({
+                type: SET_RESPONSE,
+                payload: response.data,
+            });
 
             return Promise.resolve();
         },
@@ -98,6 +102,42 @@ export const getPayment = (id) => (dispatch) => {
                     error.response.data.message) ||
                 error.message ||
                 error.toString();
+
+                dispatch({
+                    type: SET_RESPONSE,
+                    payload: message,
+                });
+
+            return Promise.reject();
+        }
+    );
+}
+
+export const getOrderByUserId = (id) => (dispatch) => {
+    return PaymentService.getOrderByUserId(id).then(
+        (response) => {
+            dispatch({
+                type: GET_ORDER_BY_USER_ID,
+            });
+            dispatch({
+                type: SET_RESPONSE,
+                payload: response.data,
+            });
+
+            return Promise.resolve();
+        },
+        (error) => {
+            const message =
+                (error.response &&
+                    error.response.data &&
+                    error.response.data.message) ||
+                error.message ||
+                error.toString();
+                
+                dispatch({
+                    type: SET_RESPONSE,
+                    payload: message,
+                });
 
             return Promise.reject();
         }

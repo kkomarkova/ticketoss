@@ -19,9 +19,15 @@ const createPayment = (
 const getAllPayments = () => {
     return api.get("/Ticket/GetAllPayments");
 };
+
+const getOrderByUserId = (id) => {
+    return api.get(`/Order/buyerid/${id}`);
+};
+
 const PaymentService = {
     createPayment,
     getAllPayments,
+    getOrderByUserId
 };
 
 export default PaymentService;
