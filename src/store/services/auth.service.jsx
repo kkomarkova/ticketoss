@@ -37,7 +37,7 @@ const login = async (
 
 const logout = () => {
         
-    localStorage.removeItem("accessToken");
+    localStorage.clear();
 }
  
 const getCurrentUser = () => {

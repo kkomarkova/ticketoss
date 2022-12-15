@@ -3,14 +3,11 @@ import {
     GET_ALL_PAYMENTS,
     CREATE_PAYMENT_FAIL,
     CREATE_PAYMENT_SUCCESS,
-
+    GET_ORDER_BY_USER_ID
     
 } from '../actions/types';
 
-const paymentInfo = JSON.parse(localStorage.getItem('payment'));
-const initialState = paymentInfo
-? { isLoggedIn: true, payment: paymentInfo }
-: { isLoggedIn: false, payment: null };
+const initialState = {};
 
 export default function payment(state = initialState, action) {
     const { type, payload } = action;
@@ -39,6 +36,12 @@ export default function payment(state = initialState, action) {
                 ...state,
                 isLoggedIn: true,
                 payment: payload.payment,
+            };
+        case GET_ORDER_BY_USER_ID:
+            return {
+                ...state,
+                isLoggedIn: true,
+                payment: payload.payment
             };
         default:
             return state;

@@ -45,18 +45,20 @@ const UserProfile = (props) => {
         </TabPanel>
         <TabPanel>
           <div className="panel-content">
-            {props.Tickets.map((ticket) => (
+             {props.Tickets.map((ticket) => (
               <div key={ticket.id}>
-                <h2>{ticket.eventName}</h2>
-                <p>{ticket.eventDate}</p>
-                <p>{ticket.eventTime}</p>
-                </div>
-            ))};
+                <p>{ticket}</p>
+              </div>
+            ))}
           </div>
         </TabPanel>
         <TabPanel>
           <div className="panel-content">
-            <h2>Any content 3</h2>
+          {props.SoldTickets.map((ticket) => (
+              <div key={ticket.id}>
+                <p>{ticket}</p>
+              </div>
+            ))}
           </div>
         </TabPanel>
       </Tabs>
