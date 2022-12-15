@@ -30,17 +30,17 @@ const UserProfile = (props) => {
 
         <TabPanel>
           <div className="panel-content">
-            <strong><p>Name</p></strong>
+            <strong><p>Name:</p></strong>
             <p>{props.Name}</p>
-            <strong><p>Email</p></strong>
+            <strong><p>Email:</p></strong>
             <p>{props.Email}</p>
-            <strong><p>Phone</p></strong>
+            <strong><p>Phone:</p></strong>
             <p>{props.Phone}</p>
-            <strong><p>Token</p></strong>
+       {/*     <strong><p>Token:</p></strong>
             <p>
               {props.Token.substring(0,20)}...{" "}
               {props.Token.substr(props.Token.length - 20)}
-            </p>
+          </p> */}
           </div>
         </TabPanel>
         <TabPanel>
@@ -56,7 +56,7 @@ const UserProfile = (props) => {
           <div className="panel-content">
           {props.SoldTickets.map((ticket) => (
               <div key={ticket.id}>
-                <p>{ticket}</p>
+                <div>{ticket}</div>
               </div>
             ))}
           </div>

@@ -94,15 +94,15 @@ const Profile = () => {
               </div>  
             ))}
             SoldTickets={tickets.map((ticket) => (
-              <div key={ticket.id}>
-                <p>Ticket Id</p>
-                <p>{ticket.id}</p>
-                <p>Title</p>
-                <p>{ticket.name}</p>
-                <p>Price</p>
-                <p>{ticket.price}</p>
-                <p>Event date</p>
-                <p>{ticket.eventDate}</p>
+              <div className="sold-tickets" key={ticket.id}>
+                <p>Ticket Id:</p>
+                <p className="sold-ticket-text">{ticket.id}</p>
+                <p>Title:</p>
+                <p className="sold-ticket-text">{ticket.name}</p>
+                <p>Price:</p>
+                <p className="sold-ticket-text">{ticket.price}</p>
+                <p>Event date:</p>
+                <p className="sold-ticket-text">{ticket.eventDate}</p>
               </div>
             ))}
           />
