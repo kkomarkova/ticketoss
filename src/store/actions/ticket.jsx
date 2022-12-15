@@ -5,7 +5,8 @@ import {
     GET_TICKET,
     GET_TICKET_LOCATION, 
     GET_TICKET_CATEGORY,
-    SET_RESPONSE
+    SET_RESPONSE,
+    GET_TICKET_BY_USER_ID
 } from './types';
 
 import TicketService from '../services/ticket.service';
@@ -172,12 +173,43 @@ export const getTicketCategory = () => (dispatch) => {
     );
 }
 
+export const getTicketByUserId = () => (dispatch) => {
+    return TicketService.getTicketByUserId().then(
+        (response) => {
+            dispatch({
+                type: GET_TICKET_BY_USER_ID,
+                payload: { ticket: response.data }
+            });
+
+            return Promise.resolve();
+        },
+        (error) => {
+            const message =
+                (error.response &&
+                    error.response.data &&
+                    error.response.data.message) ||
+                error.message ||
+                error.toString();
+
+                dispatch({
+                    type: SET_RESPONSE,
+                    payload: message,
+                });
+
+                return Promise.reject
+        }
+    );
+}
+
+
+
 const ticketActions = {
     createTicket,
     getAllTickets,
     getTicket,
     getTicketLocation,
-    getTicketCategory
+    getTicketCategory,
+    getTicketByUserId
 }
 
 export default ticketActions;

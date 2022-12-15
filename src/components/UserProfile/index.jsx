@@ -54,7 +54,11 @@ const UserProfile = (props) => {
         </TabPanel>
         <TabPanel>
           <div className="panel-content">
-            <h2>Any content 3</h2>
+          {props.SoldTickets.map((ticket) => (
+              <div key={ticket.id}>
+                <p>{ticket}</p>
+              </div>
+            ))}
           </div>
         </TabPanel>
       </Tabs>

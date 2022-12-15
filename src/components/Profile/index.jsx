@@ -4,11 +4,13 @@ import { useSelector } from "react-redux";
 import UserProfile from "../UserProfile";
 import UserService from "../../store/services/user.service";
 import PaymentService from '../../store/services/payment.service';
+import TicketService from '../../store/services/ticket.service';
 
 const Profile = () => {
   
   const { user: currentUser } = useSelector((state) => state.auth);
   const [payments, setPayments] = useState([]);
+  const [tickets, setTickets] = useState([]);
   const [loading, setLoading] = useState(true);
   //Get user id from local storage to use in the getUser function
   const userId = localStorage.getItem("userId");
@@ -40,26 +42,74 @@ const Profile = () => {
   }, []);
   console.log(payments);
 
+  useEffect(() => {
+    TicketService.getTicketByUserId(userId)
+      .then((response) => {
+        setTickets(response.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log("Error: " + error);
+      });
+  }, []);
+  console.log(tickets);
+
   if (!currentUser) {
     return <Navigate to="/login" />;
   } 
   else if (currentUser && currentUser.role === "admin") {
     return <Navigate to="/admin" />;
   }
+  
   return (
     <>
+    {loading ? (
+      <div>Loading...</div>
+    ) : (
+      <>
       {userData.map((user) => (
-        <>
           <UserProfile
             key={user.id}
             Name={user.firstName + " " + user.lastName}
             Token={currentUser}
             Email={user.email}
             Phone={user.phoneNumber}
+            Tickets={payments.map((payment) => (
+              <div key={payment.orderId}>
+                <p>Order Id</p>
+                <p>{payment.orderId}</p>
+                <p>Price</p>
+                <p>{payment.price}</p>
+                <p>Ticket</p>
+                <p>{payment.tickets.map((ticket)=>{
+                  return <div key={ticket.id}>
+                    <p>Title</p>
+                    <p>{ticket.name}</p>
+                    <p>Description</p>
+                    <p>{ticket.description}</p>
+                    <p>Event date</p>
+                    <p>{ticket.eventDate}</p>
+                  </div>
+                })}</p>
+              </div>  
+            ))}
+            SoldTickets={tickets.map((ticket) => (
+              <div key={ticket.id}>
+                <p>Ticket Id</p>
+                <p>{ticket.id}</p>
+                <p>Title</p>
+                <p>{ticket.name}</p>
+                <p>Price</p>
+                <p>{ticket.price}</p>
+                <p>Event date</p>
+                <p>{ticket.eventDate}</p>
+              </div>
+            ))}
           />
-        </>
       ))}
-    </>
+      </>
+    )}
+  </>
   );
 };
 

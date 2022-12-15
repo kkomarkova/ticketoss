@@ -32,7 +32,8 @@ const NewTicket = () => {
   const form = useRef();
   const checkBtn = useRef();
 
-  const [userId, setUserId] = useState("6342f741fe731b83c0bfcef1");
+  const getUserId = localStorage.getItem("userId");
+  const [userId, setUserId] = useState(getUserId);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");

@@ -12,6 +12,7 @@ export const GET_ALL_TICKETS = "GET_ALL_TICKETS";
 export const GET_TICKET = "GET_TICKET";
 export const GET_TICKET_LOCATION = "GET_TICKET_LOCATION";
 export const GET_TICKET_CATEGORY = "GET_TICKET_CATEGORY";
+export const GET_TICKET_BY_USER_ID = "GET_TICKET_BY_USER_ID";
 
 export const GET_ALL_USERS = "GET_ALL_USERS";
 export const GET_USER = "GET_USER";
