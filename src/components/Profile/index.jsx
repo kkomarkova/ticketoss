@@ -5,6 +5,7 @@ import UserProfile from "../UserProfile";
 import UserService from "../../store/services/user.service";
 import PaymentService from '../../store/services/payment.service';
 import TicketService from '../../store/services/ticket.service';
+import Ticket from "../Ticket";
 
 const Profile = () => {
   
@@ -78,19 +79,14 @@ const Profile = () => {
               <div key={payment.orderId}>
                 <p>Order Id</p>
                 <p>{payment.orderId}</p>
-                <p>Price</p>
-                <p>{payment.price}</p>
-                <p>Ticket</p>
-                <p>{payment.tickets.map((ticket)=>{
-                  return <div key={ticket.id}>
-                    <p>Title</p>
-                    <p>{ticket.name}</p>
-                    <p>Description</p>
-                    <p>{ticket.description}</p>
-                    <p>Event date</p>
-                    <p>{ticket.eventDate}</p>
-                  </div>
-                })}</p>
+                  {payment.tickets.map((ticket)=>{
+                  return <Ticket key={ticket.id}
+                  name= {ticket.name}
+                  description={ticket.description}                
+                  eventDate= {ticket.eventDate}
+                  price={ticket.price}
+                  />
+                })}
               </div>  
             ))}
             SoldTickets={tickets.map((ticket) => (

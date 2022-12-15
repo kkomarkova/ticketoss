@@ -29,7 +29,7 @@ const UserProfile = (props) => {
         </TabList>
 
         <TabPanel>
-          <div className="panel-content">
+          <div className="panel-content profile-info-data">
             <strong><p>Name:</p></strong>
             <p>{props.Name}</p>
             <strong><p>Email:</p></strong>

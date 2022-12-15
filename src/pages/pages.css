@@ -174,3 +174,13 @@
         font-size: 23px;
     }
   }
+/* Profile page css */
+  .profilePage .ticket-container{
+    margin-top: -5%;
+  }
+  .profilePage .ticket-img-container{
+    width: 80%;
+  }
+  .profilePage .ticket-info-container{
+    width: 80%;
+  }
