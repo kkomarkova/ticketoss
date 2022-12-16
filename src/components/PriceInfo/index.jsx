@@ -1,6 +1,6 @@
 import React from "react";
 import "./index.css";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const PriceInfo = (props) => {
   
@@ -13,8 +13,8 @@ return (
             <p>Tax {props.price} - 20%</p>
           </div>
         
-          <Link to={"/confirmation"}>
-          <button className="payment-btn">Proceed to payment </button>
+          <Link to={props.Link}>
+            <button className="payment-btn" onClick={props.OnClick}>Proceed to payment </button>
           </Link>
         </div>
     </>

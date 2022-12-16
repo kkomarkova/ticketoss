@@ -11,7 +11,7 @@ const TicketPage = () => {
 
   const { id } = useParams();
   const [ticket, setTicket] = useState([]);
-  const [setUser] = useState([]);
+  const [user, setUser] = useState([]);
   
   
   useEffect(() => {
@@ -19,9 +19,15 @@ const TicketPage = () => {
       .then((response) => {
         setTicket(response.data);
       });
-  
   }, []);
 
+  useEffect(() => {
+      UserService.getUser(ticket.userId)
+        .then((response) => {
+          setUser(response.data);
+          console.log("userSeller: ",user)
+        });
+    }, []);
   
   const handleAddToCart = () => {
     const cartItem = JSON.parse(localStorage.getItem("cartItem"));

@@ -4,7 +4,8 @@ import {
     GET_ALL_PAYMENTS,
     GET_PAYMENT,
     SET_RESPONSE,
-    GET_ORDER_BY_USER_ID
+    GET_ORDER_BY_USER_ID,
+    CREATE_ORDER_SUCCESS
 } from './types';
 
 import PaymentService from '../services/payment.service';
@@ -134,6 +135,50 @@ export const getOrderByUserId = (id) => (dispatch) => {
                 error.message ||
                 error.toString();
                 
+                dispatch({
+                    type: SET_RESPONSE,
+                    payload: message,
+                });
+
+            return Promise.reject();
+        }
+    );
+}
+
+export const createOrder = (
+    UserId,
+    TicketId,
+    PaymentId,
+    OrderDate,
+    OrderStatus
+) => (dispatch) => {
+    return PaymentService.createOrder(
+        UserId,
+        TicketId,
+        PaymentId,
+        OrderDate,
+        OrderStatus
+    ).then(
+        (response) => {
+            dispatch({
+                type: CREATE_ORDER_SUCCESS,
+            });
+
+            dispatch({
+                type: SET_RESPONSE,
+                payload: response.data,
+            });
+
+            return Promise.resolve();
+        },
+        (error) => {
+            const message =
+                (error.response &&
+                    error.response.data &&
+                    error.response.data.message) ||
+                error.message ||
+                error.toString();
+
                 dispatch({
                     type: SET_RESPONSE,
                     payload: message,

@@ -2,16 +2,28 @@ import React, { useState, useEffect } from "react";
 import Ticket from "../components/Ticket";
 import PriceInfo from "../components/PriceInfo";
 import "../pages/pages.css";
+import PaymentService from "../store/services/payment.service";
+import { Navigate } from "react-router-dom";
 
 const CartOverview = () => {
 
   const [ticket, setTicket] = useState([]);
+  const [userInfo, setUserInfo] = useState("");
+  const [href, setHref] = useState("/cartOverview")
   
-  //Get ticket from local storage
+  //Getting data from local storage
+  const cartItem = JSON.parse(localStorage.getItem("cartItem"));
+  const userId = localStorage.getItem("userId");
+
   useEffect(() => {
-    const cartItem = JSON.parse(localStorage.getItem("cartItem"));
     setTicket(cartItem);
+    setUserInfo(userId);
   }, []);
+
+  const onPurchase = () => {
+    PaymentService.createOrder(ticket, ticket.price, userInfo)
+        setHref("/confirmation")
+  };
   return (  
     <>
       <h1 className="cart-overview">Cart overview</h1>
@@ -30,6 +42,8 @@ const CartOverview = () => {
         <div>
           <PriceInfo 
             price={ticket.price}
+            OnClick={onPurchase}
+            Link={href}
           />
         </div>
       </div>
