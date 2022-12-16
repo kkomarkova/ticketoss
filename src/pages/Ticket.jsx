@@ -19,17 +19,15 @@ const TicketPage = () => {
       .then((response) => {
         setTicket(response.data);
       });
-  
   }, []);
 
   useEffect(() => {
       UserService.getUser(ticket.userId)
         .then((response) => {
           setUser(response.data);
-          console.log("Ticekt.userId: ",ticket.userId)
+          console.log("userSeller: ",user)
         });
-      }, []);
-      console.log("user: ",ticket.userId)
+    }, []);
   
   const handleAddToCart = () => {
     const cartItem = JSON.parse(localStorage.getItem("cartItem"));
