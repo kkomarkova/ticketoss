@@ -18,13 +18,13 @@ const UserProfile = (props) => {
       <Tabs>
         <TabList>
           <Tab>
-            <p>Profile info</p>
+            <p>My info</p>
           </Tab>
           <Tab>
-            <p>My purchased tickets</p>
+            <p>My order</p>
           </Tab>
           <Tab>
-            <p>Sold tickets</p>
+            <p>My tickets</p>
           </Tab>
         </TabList>
 

@@ -19,7 +19,7 @@ const Confirmation = () => {
     EmailService.sendEmail(
       userInfo[0].email,
       "Order Confirmation",
-      `Thank you for your purchase! Your order ID is ${randomId+order.id}`
+      `Thank you for your purchase! Your order ID is: 82380e27de8xd8y820280x09`
     ).then((response) => {
       if(response.status === 200){
         console.log("Email sent successfully");

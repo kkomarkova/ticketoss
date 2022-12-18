@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.css";
+import pb from "../../images/pb.jpg";
 
 const Seller = (props) => {
   
@@ -10,7 +11,7 @@ const Seller = (props) => {
         
           <div className="seller-profile">
             <div>
-            <img src={""} title="#" alt="pb"/></div>
+            <img src={pb} title="#" alt="pb"/></div>
             <h2>{props.sellerName}</h2>
           </div>
 

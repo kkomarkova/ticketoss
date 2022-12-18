@@ -14,6 +14,9 @@ const CartOverview = () => {
   //Getting data from local storage
   const cartItem = JSON.parse(localStorage.getItem("cartItem"));
   const userId = localStorage.getItem("userId");
+  if(!userId){
+    <Navigate to="/login" />
+  }
 
   useEffect(() => {
     setTicket(cartItem);

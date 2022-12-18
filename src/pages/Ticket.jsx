@@ -21,13 +21,13 @@ const TicketPage = () => {
       });
   }, []);
 
-  useEffect(() => {
+  
       UserService.getUser(ticket.userId)
         .then((response) => {
           setUser(response.data);
           console.log("userSeller: ",user)
         });
-    }, []);
+    
   
   const handleAddToCart = () => {
     const cartItem = JSON.parse(localStorage.getItem("cartItem"));
@@ -56,7 +56,8 @@ const TicketPage = () => {
         </div>
         <div>
           <Seller 
-            sellerName={ticket.userId}
+            key={user.id}
+            sellerName={user.firstName + ' ' +user.lastName}
           />
           <Link to={"/cartOverview"}>
             <button 
